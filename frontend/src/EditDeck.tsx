@@ -14,13 +14,12 @@ const formulasDeck = [...elementaryFormulaDeck, ...advancedFormulaDeck];
 const conceptsDeck = [...conceptDeck];
 
 // State variable for changing which deck is selected and displayed
-const [selectedDeck, setSelectedDeck] = useState<ICard[]>(constantsDeck);
-
 
 import { useContext } from "react";
 import GameContext from "./GameContext";
 
 function EditDeck() {
+  const [selectedDeck, setSelectedDeck] = useState<ICard[]>(constantsDeck);
   const { setCurrentPage } = useContext(GameContext);
   // Have to mkae it so it only selects one option
   return (

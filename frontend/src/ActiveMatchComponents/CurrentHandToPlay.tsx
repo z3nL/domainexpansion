@@ -17,7 +17,6 @@ function CurrentHandToPlay({
           <Card />
           <Card />
         </div>
-        ø
         <div className="selectedCardInfo">
           <p>
             [Modifies value of {"<your || opponent>"}'s score to become
