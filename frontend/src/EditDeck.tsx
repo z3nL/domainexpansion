@@ -13,44 +13,43 @@ function EditDeck() {
             <h2>Edit Deck</h2>
         </div>
         <div className="menu-overlay"> 
-        </div>
-        <div className="menu-overlay2"> 
-        </div>
-        <div className="edit-deck">
-            <div className="deck-type-options">
-                <label className="radio-label">
-                    <input type="radio" value="Constants" name="target"/>
-                    Constants
-                </label>
-                <label className="radio-label">
-                    <input type="radio" value="Formulas" name="target"/>
-                    Formulas
-                </label>
-                <label className="radio-label">
-                    <input type="radio" value="Concepts" name="target"/>
-                    Concepts
-                </label>
+            <div className="menu-overlay2">
+                <div className="edit-deck">
+                    <div className="deck-type-options">
+                        <label className="radio-label">
+                            <input type="radio" value="Constants" name="target"/>
+                            Constants
+                        </label>
+                        <label className="radio-label">
+                            <input type="radio" value="Formulas" name="target"/>
+                            Formulas
+                        </label>
+                        <label className="radio-label">
+                            <input type="radio" value="Concepts" name="target"/>
+                            Concepts
+                        </label>
+                    </div>
+                    <div className="select-container">
+                        <label className="select-p">
+                            Selected/NumberofCards
+                        </label>
+                        <label className="select-p">
+                            Selected/NumberofCards
+                        </label>
+                        <label className="select-p">
+                            Selected/NumberofCards
+                        </label>
+                    </div>
+                    <div className="cards-container">
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                    </div>
+                </div>
             </div>
-            <div className="select-container">
-                <label className="select-p">
-                    Selected/NumberofCards
-                </label>
-                <label className="select-p">
-                    Selected/NumberofCards
-                </label>
-                <label className="select-p">
-                    Selected/NumberofCards
-                </label>
-            </div>
-            <div className="cards-container">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-            </div>
         </div>
-
         </>
     )
 }
