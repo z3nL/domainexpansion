@@ -20,7 +20,6 @@ interface Card {
   value?: number;
 }
 
-
 /**
  * Utility function that checks if a given value is of a certain type.
  *
@@ -46,7 +45,6 @@ function validate_type(
   }
   throw new Error(`Invalid ${position} type`);
 }
-
 
 /**
  * Evaluates a formula card with the given target and arguments

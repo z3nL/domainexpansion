@@ -1,8 +1,70 @@
 # Domain Expansion<sub>(tm)</sub>
 
-Build your knowledge, build your deck, conquer math.
+Build your knowledge and your deck to conquer your opponents and your next math test.
 
-## Usage
+## Overview
+
+A turn-based card game where your objective is to leverage your mathematical understanding to our maneuver your opponent.
+
+==expand upon==
+
+### Quick Links
+
+- [Implementation](#implementation)
+- [Deployment and Usage](#deployment-and-usage)
+- [Reflection](#reflection)
+- [Game Rules](#game-rules)
+
+## Developers
+
+| Name           | Role       | GitHub                                        | LinkedIn                                                        |
+| -------------- | ---------- | --------------------------------------------- | --------------------------------------------------------------- |
+| Zen Lamberus   |            |                                               |                                                                 |
+| Dillon Wilson  |            |                                               |                                                                 |
+| Marion Forrest | Game Logic | [TheAdaptoid](https://github.com/TheAdaptoid) | [Marion Forrest](https://www.linkedin.com/in/themarionforrest/) |
+
+## Implementation
+
+### Languages, Libraries, and Frameworks
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+
+### Architecture
+
+==A high level description of the project's architecture==
+
+#### Frontend only
+
+==why==
+
+#### TypeScript-React Tech Stack
+
+==why==
+
+#### Peer-2-Peer game hosting with web sockets
+
+==why==
+
+### Code Structure
+
+```bash
+frontend/
+├── src/
+│   ├── App.tsx
+│   ├── ActiveMatchComponents/
+│   │   ├── <fill in>
+│   │   ├── ...
+│   ├── game/ # Game Objects and Logic
+│   │   ├── cards.ts
+│   │   ├── concepts.ts
+│   │   ├── ...
+<fill in>
+Readme.md # Main README
+```
+
+## Deployment and Usage
 
 ### Dependencies
 
@@ -14,6 +76,34 @@ Build your knowledge, build your deck, conquer math.
 ```bash
 npm i # install dependencies
 ```
+
+### How to Play
+
+==how to play/run the game==
+
+## Reflection
+
+### What We Learned
+
+#### Zen
+
+#### Dillon
+
+#### Marion
+
+- First major project with TypeScript
+- First time doing a game
+
+### Issues and Challenges
+
+#### Zen
+
+#### Dillon
+
+#### Marion
+
+- Very in-experienced with TypeScript and Node
+- Small hiccups with TypeScript syntax
 
 ## Game Rules
 
@@ -73,6 +163,13 @@ The a winner is crowned and the game ends when one of the following occurs:
 - **20** turns have been completed. Winner is the player with the *largest positive value*
 - At least one player has run out of cards. Winner is the player with the *largest positive value*
 
----
+### Constants, Functions, and Concepts
 
-Made for KH'25 by Marion Forrest, Dillon Wilson, and Zen Lambertus
+| Type    | Tier        | Name           | Notation |
+| ------- | ----------- | -------------- | -------- |
+| Formula | Elementary  | Addition       |          |
+| Formula | Elementary  | Subtraction    |          |
+| Formula | Elementary  | Multiplication |          |
+| Formula | Elementary  | Division       |          |
+| Formula | High School | Power          |          |
+| Formula | High School | Logarithm      |          |
