@@ -7,10 +7,34 @@ import TurnInformation from "./ActiveMatchComponents/TurnInformation";
 import CurrentHandToPlay from "./ActiveMatchComponents/CurrentHandToPlay";
 import Landing from "./Landing";
 import PlayCardModal from "./ActiveMatchComponents/PlayCardModal";
+import GameContext from "./GameContext";
+import { useContext } from "react";
+import type { ICard } from "./game/cards";
 
 // TODO implement state management for active match data and navigation back to landing page
 
+/**
+ * Draws a single card from the given deck.
+ * The card is removed from the deck after drawing.
+ * @param {ICard[]} deck The deck to draw from.
+ * @returns {ICard} The drawn card.
+ */
+function drawCard(deck: ICard[]): ICard {
+  const index = Math.floor(Math.random() * deck.length);
+  return deck.splice(index, 1)[0];
+}
+
 function ActiveMatch() {
+  const { deck } = useContext(GameContext);
+
+  const maxHandSize: number = 6;
+  const maxTurns: number = 10; // TODO: Change to 20 later
+
+  const [currentTurn, setCurrentTurn] = useState(1); // Host is odd turn, guest is even
+  const [currentHand, setCurrentHand] = useState<ICard[]>([]);
+  const [hostScore, setHostScore] = useState(1);
+  const [guestScore, setGuestScore] = useState(1);
+
   const [inMatch, setInMatch] = useState(true);
   const [isConfirmingExit, setIsConfirmingExit] = useState(false);
   const [isConfirmingExit_time, setIsConfirmingExit_time] = useState<
@@ -41,6 +65,7 @@ function ActiveMatch() {
     setIsPlayingCard(!isPlayingCard);
   };
 
+  // When the match is over, return to the landing page
   if (!inMatch) {
     return <Landing />;
   }
@@ -56,7 +81,14 @@ function ActiveMatch() {
         />
         <h1>Active Match</h1>
       </div>
-      <MatchInformationHeader />
+      <MatchInformationHeader
+        {...{
+          hostScore: hostScore,
+          guestScore: guestScore,
+          turnsRemaining: maxTurns - currentTurn,
+          cardsRemaining: deck.length,
+        }}
+      />
       <TurnInformation />
       <CurrentHandToPlay handlePlayCardModal={handlePlayCardModal} />
       {isPlayingCard && (
