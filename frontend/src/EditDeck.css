@@ -1,0 +1,102 @@
+.edit-deck {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 15rem;
+}
+
+.deck-type-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  
+}
+
+.radio-label input[type="radio"] {
+  cursor: pointer;
+}
+
+.cards-container {
+  max-height: 30rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  gap: 1rem;
+}
+
+.card {
+  border: 5px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1);
+}
+
+.card-header {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 0;
+  color: #666;
+}
+
+.select-container{
+   display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.select-p {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Exit Button Settings*/
+.absoluteHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.exitIcon {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.menu-overlay {
+  width: 72rem;
+  height: 37rem;
+  background: rgba(112, 69, 3);  
+  border: #666; 
+  border-radius: 5rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-overlay2 {
+  width: 68rem;
+  height: 32rem;
+  background: rgb(227, 180, 109);
+  border: #666; 
+  border-radius: 5rem; 
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+ 
+
