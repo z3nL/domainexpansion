@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from './CardSmall';
 
 function CurrentHandToPlay({ handlePlayCardModal }: { handlePlayCardModal: () => void }) {
     //TODO state variable for currently selected card

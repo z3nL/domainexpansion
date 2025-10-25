@@ -1,6 +1,6 @@
 import "./Landing.css"
 import "./EditDeck.css"
-import Card from "./ActiveMatchComponents/Card"
+import Card from "./ActiveMatchComponents/CardSmall"
 import exitIcon from './assets/exit.png'
 // Edit Deck Funtions
 function EditDeck() {
