@@ -1,14 +1,22 @@
 import "./Landing.css";
 import "./EditDeck.css";
-import Card from "./ActiveMatchComponents/CardSmall";
+import Card from "./ActiveMatchComponents/Card";
 import exitIcon from "./assets/exit.png";
-// Edit Deck Funtions
+import { useContext } from "react";
+import GameContext from "./GameContext";
+
 function EditDeck() {
+  const { setCurrentPage } = useContext(GameContext);
   // Have to mkae it so it only selects one option
   return (
     <>
       <div className="absoluteHeader">
-        <img src={exitIcon} alt="Exit Icon" className="exitIcon" />
+        <img
+          src={exitIcon}
+          alt="Exit Icon"
+          className="exitIcon"
+          onClick={() => setCurrentPage("landing")}
+        />
         <h2>Edit Deck</h2>
       </div>
       <div className="menu-overlay">
