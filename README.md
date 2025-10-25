@@ -1,5 +1,7 @@
 # Domain Expansion<sub>(tm)</sub>
 
+Build your knowledge, build your deck, conquer math.
+
 ## Usage
 
 ### Dependencies
@@ -70,3 +72,7 @@ The a winner is crowned and the game ends when one of the following occurs:
 - One player reaches *negative infinity*, loser of the match
 - **20** turns have been completed. Winner is the player with the *largest positive value*
 - At least one player has run out of cards. Winner is the player with the *largest positive value*
+
+---
+
+Made for KH'25 by Marion Forrest, Dillon Wilson, and Zen Lambertus
