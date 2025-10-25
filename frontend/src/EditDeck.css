@@ -1,0 +1,107 @@
+.edit-deck {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 20rem;
+  padding: 42px;
+}
+
+.deck-type-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap:10px;
+  cursor: pointer;
+  z-index: 2;
+  
+}
+
+.radio-label input[type="radio"] {
+  cursor: pointer;
+}
+
+.cards-container {
+max-height: 30rem;
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 10px;
+margin-top: rem;
+z-index: 3;
+}
+
+.card {
+  border: 5px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1);
+}
+
+.card-header {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 0;
+  color: #666;
+}
+
+.select-container{
+   display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  z-index: 2;
+}
+
+.select-p {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+/* Exit Button Settings*/
+.absoluteHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.exitIcon {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: rem;
+  left: rem;
+  width: 72rem;
+  height: 37rem;
+  background: rgba(112, 69, 3);  
+  z-index: 1;
+  border: #666; 
+  border-radius: 5rem; 
+}
+
+.menu-overlay2 {
+  position: fixed;
+  top: 150px;
+  left: 70px;
+  width: 68rem;
+  height: 32rem;
+  background: rgb(227, 180, 109);  
+  z-index: 1;
+  border: #666; 
+  border-radius: 5rem; 
+}
+ 
+

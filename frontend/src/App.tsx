@@ -1,9 +1,9 @@
-import Landing from './Landing'
+import EditDeck from './EditDeck'
 
 function App() {
 
   return (
-    <Landing />
+    <EditDeck />
   )
 }
 
