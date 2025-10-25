@@ -11,9 +11,18 @@ import GameContext from "../GameContext";
 function Card(card: ICard) {
   const [isSelected, setIsSelected] = useState(false);
   const { deck, setDeck } = useContext(GameContext);
+  const handleCardClick = () => {
+    if (isSelected) {
+      setDeck(deck.filter(c => c.name !== card.name));
+    } else {
+      setDeck([...deck, card]);
+    }
 
+    setIsSelected(!isSelected)
+  }
+  
   return (
-    <div className={`card_${isSelected ? "Selected" : "Unselected"}`} onClick={() => {setIsSelected(!isSelected)}}>
+    <div className={`card_${isSelected ? "Selected" : "Unselected"}`} onClick={handleCardClick}>
       <div className="card-header">
         <h3 className="card-name">{card.name}</h3>
         <span className="card-power">{powerLookupTable(card.tier)}</span>
