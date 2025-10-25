@@ -33,44 +33,38 @@ function EditDeck() {
         />
         <h2>Edit Deck</h2>
       </div>
-      <div className="menu-overlay">
-        <div className="menu-overlay2">
           <div className="edit-deck">
             <div className="deck-type-options">
-              <label className="radio-label">
-                <input type="radio" value="Constants" name="target" />
-                Constants
-              </label>
-              <label className="radio-label">
-                <input type="radio" value="Formulas" name="target" />
-                Formulas
-              </label>
-              <label className="radio-label">
-                <input type="radio" value="Concepts" name="target" />
-                Concepts
-              </label>
-            </div>
-            <div className="select-container">
-              <label className="select-p">Selected/NumberofCards</label>
-              <label className="select-p">Selected/NumberofCards</label>
-              <label className="select-p">Selected/NumberofCards</label>
+              <select id="deck-type-select"
+                className="deck-select"
+                defaultValue="Constants"
+                onChange={(e) => {
+                  const v = (e.target as HTMLSelectElement).value;
+                  if (v === "Constants") setSelectedDeck(constantsDeck);
+                  else if (v === "Formulas") setSelectedDeck(formulasDeck);
+                  else if (v === "Concepts") setSelectedDeck(conceptsDeck);
+                }}
+              >
+                <option value="Constants">Constants</option>
+                <option value="Formulas">Formulas</option>
+                <option value="Concepts">Concepts</option>
+              </select>
+              <div className="select-container">
+                <label className="select-p">[Selected/NumberofCards]</label>
+                <label className="select-p">[Selected/NumberofCards]</label>
+                <label className="select-p">[Selected/NumberofCards]</label>
+              </div>
             </div>
             <div className="cards-container">
-              <Card
-                name="sin(x)"
-                type="Formula"
-                power="90"
-                symbol="sin(x) = opposite/hypotenuse"
-                description="Sine function for right triangles"
-              />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              {selectedDeck.length === 0 ? (
+              <div className="empty-deck">No cards in this deck.</div>
+              ) : (
+              selectedDeck.map((card, i) => (
+                <Card key={`${(card as any).name ?? "card"}-${i}`} {...card} />
+              ))
+              )}
             </div>
           </div>
-        </div>
-      </div>
     </>
   );
 }

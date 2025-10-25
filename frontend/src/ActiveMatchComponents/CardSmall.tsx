@@ -20,7 +20,6 @@ $\\{ a, \\dots \\}$
       </div>
 
       <div className="cardSmallItem">
-        {/* Supports LaTeX now */}
         <ReactMarkdown
           remarkPlugins={[remarkMath]}
           rehypePlugins={[rehypeKatex]}
