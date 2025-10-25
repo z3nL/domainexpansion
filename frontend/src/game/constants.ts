@@ -1,4 +1,4 @@
-import type { Card } from "./cards.ts";
+import type { Card } from "./cards";
 
 export const CONSTANT_CARDS: Card[] = [
   {

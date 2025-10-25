@@ -1,6 +1,6 @@
-import { CONSTANT_CARDS } from "./constants.ts";
-import { FORMULA_CARDS } from "./formulas.ts";
-import { evaluate_formula } from "./cards.ts";
+import { CONSTANT_CARDS } from "./constants";
+import { FORMULA_CARDS } from "./formulas";
+import { evaluate_formula } from "./cards";
 
 // Example usage
 const oneCard = CONSTANT_CARDS.find((card) => card.name === "One");

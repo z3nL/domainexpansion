@@ -1,5 +1,5 @@
-import type { Card } from "./cards.ts";
-import { validate_type } from "./cards.ts";
+import type { Card } from "./cards";
+import { validate_type } from "./cards";
 
 /*
 Formula Syntax:
