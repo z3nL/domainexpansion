@@ -1,5 +1,5 @@
-import type { Card } from "./cards.ts";
-import { validate_type } from "./cards.ts";
+import type { Card } from "./cards";
+import { validate_type } from "./cards";
 
 /*
 Formula Syntax:
@@ -77,16 +77,16 @@ export const FORMULA_CARDS: Card[] = [
       return Math.log(target) / Math.log(a);
     },
   },
-    {
-        name: "Union",
-        tier: "College",
-        type: "Concept",
-        symbol: "$f(u, v) = u \\cup v$",
-    },
-    {
-        name: "Intersect",
-        tier: "College",
-        type: "Concept",
-        symbol: "$f(a, b) = a \\cap b$",
-    },
+  {
+    name: "Union",
+    tier: "College",
+    type: "Concept",
+    symbol: "$f(u, v) = u \\cup v$",
+  },
+  {
+    name: "Intersect",
+    tier: "College",
+    type: "Concept",
+    symbol: "$f(a, b) = a \\cap b$",
+  },
 ];

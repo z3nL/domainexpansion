@@ -1,6 +1,6 @@
-import { namedConstantsDeck } from "./constants.ts";
-import { FORMULA_CARDS } from "./formulas.ts";
-import { evaluate_formula } from "./cards.ts";
+import { CONSTANT_CARDS } from "./constants";
+import { FORMULA_CARDS } from "./formulas";
+import { evaluate_formula } from "./cards";
 
 // Example usage
 const oneCard = namedConstantsDeck.find((card) => card.name === "One");
@@ -35,3 +35,5 @@ if (result4 !== -1) {
 } else {
   console.log("Subtraction(1, Two) was correctly evaluated to -1");
 }
+
+// Sample multi-turn evaluation
