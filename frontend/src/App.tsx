@@ -7,7 +7,7 @@ import ActiveMatch from './ActiveMatch'
 
 function App() {
   return (
-    <EditDeck />
+    <ActiveMatch />
   )
 }
 
