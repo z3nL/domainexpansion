@@ -17,6 +17,7 @@ const conceptsDeck = [...conceptDeck];
 
 import { useContext } from "react";
 import GameContext from "./GameContext";
+import CardCounters from "./EditDeckCardCounters";
 
 function EditDeck() {
   const [selectedDeck, setSelectedDeck] = useState<ICard[]>(constantsDeck);
@@ -50,9 +51,7 @@ function EditDeck() {
                 <option value="Concepts">Concepts</option>
               </select>
               <div className="select-container">
-                <label className="select-p">[Selected/NumberofCards]</label>
-                <label className="select-p">[Selected/NumberofCards]</label>
-                <label className="select-p">[Selected/NumberofCards]</label>
+                <CardCounters/>
               </div>
             </div>
             <div className="cards-container">
