@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import EditDeck from './EditDeck'
+import { useState } from "react";
+import EditDeck from "./EditDeck";
 // import EditDeck ,,, from './EditDeck'
-import ActiveMatch from './ActiveMatch'
+import ActiveMatch from "./ActiveMatch";
 // import PlayCardOverlay ...
 // import EndOfMatchScreen ...
 
 function App() {
-  return (
-    <ActiveMatch />
-  )
+  return <ActiveMatch />;
 }
 
-export default App
+export default App;

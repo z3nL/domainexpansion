@@ -1,10 +1,10 @@
 function TurnInformation() {
-    // TODO state variables for turn information and selected action
-    return (
-        <div className="turnInformation">
-            <h3>Some animation thing idk // last turn played</h3>
-            <h2>[Your Move...]</h2>
-            {/* <div className="turnActions">
+  // TODO state variables for turn information and selected action
+  return (
+    <div className="turnInformation">
+      <h3>Some animation thing idk // last turn played</h3>
+      <h2>[Your Move...]</h2>
+      {/* <div className="turnActions">
                 <label className="turnOption">
                     <input type="radio" name="target" value="self" />
                     Self
@@ -14,8 +14,8 @@ function TurnInformation() {
                     Opponent
                 </label>
             </div> */}
-        </div>
-    );
+    </div>
+  );
 }
 
 export default TurnInformation;

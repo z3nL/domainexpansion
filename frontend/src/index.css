@@ -8,15 +8,27 @@
 
   background: hsla(218, 71%, 29%, 1);
 
-  background: radial-gradient(circle, hsla(218, 71%, 29%, 1) 31%, hsla(240, 53%, 10%, 1) 95%);
+  background: radial-gradient(
+    circle,
+    hsla(218, 71%, 29%, 1) 31%,
+    hsla(240, 53%, 10%, 1) 95%
+  );
 
-  background: -moz-radial-gradient(circle, hsla(218, 71%, 29%, 1) 31%, hsla(240, 53%, 10%, 1) 95%);
+  background: -moz-radial-gradient(
+    circle,
+    hsla(218, 71%, 29%, 1) 31%,
+    hsla(240, 53%, 10%, 1) 95%
+  );
 
-  background: -webkit-radial-gradient(circle, hsla(218, 71%, 29%, 1) 31%, hsla(240, 53%, 10%, 1) 95%);
+  background: -webkit-radial-gradient(
+    circle,
+    hsla(218, 71%, 29%, 1) 31%,
+    hsla(240, 53%, 10%, 1) 95%
+  );
 
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#153B7D", endColorstr="#0C0C27", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#153B7D", endColorstr="#0C0C27", GradientType=1 );
 
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#61C427", endColorstr="#117A1D", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#61C427", endColorstr="#117A1D", GradientType=1 );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
