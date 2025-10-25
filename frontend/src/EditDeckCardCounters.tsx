@@ -2,9 +2,9 @@ import GameContext from "./GameContext";
 import { useContext } from "react";
 import type { ICard } from "./game/cards";
 
-const MAX_CONSTANT_CARDS = 10;
-const MAX_FORMULA_CARDS = 5;
-const MAX_CONCEPT_CARDS = 5;
+const MAX_CONSTANT_CARDS: number = 10;
+const MAX_FORMULA_CARDS: number = 5;
+const MAX_CONCEPT_CARDS: number = 5;
 
 /**
  * Checks if the given card is a valid ICard object
