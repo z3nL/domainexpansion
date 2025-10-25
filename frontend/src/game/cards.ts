@@ -11,7 +11,7 @@ type Type = "Constant" | "Formula" | "Concept";
  * @param func The function of the card, if it is a formula card
  * @param value The value of the card, if it is a constant card
  */
-interface Card {
+interface ICard {
   name: string;
   description: string;
   tier: Tier;
@@ -57,9 +57,9 @@ function validate_type(
  * @returns The result of the formula card's function
  */
 function evaluate_formula(
-  formula: Card,
+  formula: ICard,
   target: number | number[],
-  args?: Card[],
+  args?: ICard[],
 ): number {
   if (formula.type !== "Formula" || !formula.func) {
     throw new Error("Card is not a formula");
@@ -82,4 +82,4 @@ function evaluate_formula(
 }
 
 export { evaluate_formula, validate_type };
-export type { Card, Tier, Type };
+export type { ICard, Tier, Type };

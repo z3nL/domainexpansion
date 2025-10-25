@@ -1,6 +1,6 @@
-import type { Card } from "./cards";
+import type { ICard } from "./cards";
 
-export const namedConstantsDeck: Card[] = [
+export const namedConstantsDeck: ICard[] = [
   {
     name: "Pi, the Circle’s Heartbeat",
     description:
@@ -57,7 +57,7 @@ export const namedConstantsDeck: Card[] = [
   },
 ];
 
-export const numericConstantDeck: Card[] = [
+export const numericConstantDeck: ICard[] = [
   {
     name: "The Void",
     description:

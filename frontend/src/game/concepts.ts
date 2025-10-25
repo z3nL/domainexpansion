@@ -1,7 +1,7 @@
-import type { Card } from "./cards";
+import type { ICard } from "./cards";
 import { validate_type } from "./cards";
 
-export const CONCEPT_CARDS: Card[] = [
+export const conceptDeck: ICard[] = [
   {
     name: "Set Theory",
     description: "[[SKIPPED]]",

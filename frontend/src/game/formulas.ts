@@ -1,4 +1,4 @@
-import type { Card } from "./cards";
+import type { ICard } from "./cards";
 import { validate_type } from "./cards";
 
 /*
@@ -10,7 +10,7 @@ function formulaName(target: number | number[], otherArgs: number[]): number {
 }
 */
 
-export const elementaryFormulaDeck: Card[] = [
+export const elementaryFormulaDeck: ICard[] = [
   {
     name: "Spell of Scalar Union",
     description: "Two numbers merge into one. A summation of perfect harmony.",
@@ -63,7 +63,7 @@ export const elementaryFormulaDeck: Card[] = [
   },
 ];
 
-export const advancedFormulaDeck: Card[] = [
+export const advancedFormulaDeck: ICard[] = [
   {
     name: "Invocation of Magnitude",
     description: "Now you're playing with **POWER!**",
@@ -114,6 +114,6 @@ export const advancedFormulaDeck: Card[] = [
   },
 ];
 
-export const trigFormulaDeck: Card[] = [];
+export const trigFormulaDeck: ICard[] = [];
 
-export const statsFormulaDeck: Card[] = [];
+export const statsFormulaDeck: ICard[] = [];
