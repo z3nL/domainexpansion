@@ -65,3 +65,9 @@
 .card {
     border: 1px solid white;
 }
+
+.playCardButton {
+    width: 15rem;
+    color: rgb(39, 116, 139);
+    background-color: white;
+}
