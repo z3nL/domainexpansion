@@ -2,30 +2,18 @@ import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
+import type { ICard } from "../game/cards";
+import { powerLookupTable } from "../game/cards";
 
-interface CardProps {
-  name?: string;
-  type?: string;
-  power?: string;
-  symbol?: string;
-  description?: string;
-}
-function Card({
-  // place holder
-  name = "sin(x)",
-  type = "Formula",
-  power = "90",
-  symbol = "Function",
-  description = "Trigonometric function",
-}: CardProps) {
+function Card(card: ICard) {
   return (
     <div className="card">
       <div className="card-header">
-        <h3 className="card-name">{name}</h3>
-        <span className="card-power">{power}</span>
+        <h3 className="card-name">{card.name}</h3>
+        <span className="card-power">{powerLookupTable(card.tier)}</span>
       </div>
 
-      <div className="card-type">{type}</div>
+      <div className="card-type">{card.type}</div>
 
       <div className="card-content-wrapper">
 
@@ -34,7 +22,7 @@ function Card({
             remarkPlugins={[remarkMath]}
             rehypePlugins={[rehypeKatex]}
           >
-            {symbol}
+            {card.symbol}
           </ReactMarkdown>
         </div>
 
@@ -43,7 +31,7 @@ function Card({
             remarkPlugins={[remarkMath]}
             rehypePlugins={[rehypeKatex]}
           >
-            {description}
+            {card.description}
           </ReactMarkdown>
         </div>
 

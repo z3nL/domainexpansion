@@ -34,36 +34,37 @@ function EditDeck() {
         />
         <h2>Edit Deck</h2>
       </div>
-          <div className="edit-deck">
-            <div className="deck-type-options">
-              <select id="deck-type-select"
-                className="deck-select"
-                defaultValue="Constants"
-                onChange={(e) => {
-                  const v = (e.target as HTMLSelectElement).value;
-                  if (v === "Constants") setSelectedDeck(constantsDeck);
-                  else if (v === "Formulas") setSelectedDeck(formulasDeck);
-                  else if (v === "Concepts") setSelectedDeck(conceptsDeck);
-                }}
-              >
-                <option value="Constants">Constants</option>
-                <option value="Formulas">Formulas</option>
-                <option value="Concepts">Concepts</option>
-              </select>
-              <div className="select-container">
-                <CardCounters/>
-              </div>
-            </div>
-            <div className="cards-container">
-              {selectedDeck.length === 0 ? (
-              <div className="empty-deck">No cards in this deck.</div>
-              ) : (
-              selectedDeck.map((card, i) => (
-                <Card key={`${(card as any).name ?? "card"}-${i}`} {...card} />
-              ))
-              )}
-            </div>
+      <div className="edit-deck">
+        <div className="deck-type-options">
+          <select
+            id="deck-type-select"
+            className="deck-select"
+            defaultValue="Constants"
+            onChange={(e) => {
+              const v = (e.target as HTMLSelectElement).value;
+              if (v === "Constants") setSelectedDeck(constantsDeck);
+              else if (v === "Formulas") setSelectedDeck(formulasDeck);
+              else if (v === "Concepts") setSelectedDeck(conceptsDeck);
+            }}
+          >
+            <option value="Constants">Constants</option>
+            <option value="Formulas">Formulas</option>
+            <option value="Concepts">Concepts</option>
+          </select>
+          <div className="select-container">
+            <CardCounters />
           </div>
+        </div>
+        <div className="cards-container">
+          {selectedDeck.length === 0 ? (
+            <div className="empty-deck">No cards in this deck.</div>
+          ) : (
+            selectedDeck.map((card, i) => (
+              <Card key={`${card.name ?? "card"}-${i}`} {...card} />
+            ))
+          )}
+        </div>
+      </div>
     </>
   );
 }
