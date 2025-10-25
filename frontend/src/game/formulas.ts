@@ -10,12 +10,13 @@ function formulaName(target: number | number[], otherArgs: number[]): number {
 }
 */
 
-export const FORMULA_CARDS: Card[] = [
+export const elementaryFormulaDeck: Card[] = [
   {
-    name: "Addition",
+    name: "Spell of Scalar Union",
+    description: "Two numbers merge into one. A summation of perfect harmony.",
     tier: "Elementary",
     type: "Formula",
-    symbol: "$f(a, b) = a + b$",
+    symbol: "$f(x, y) = x + y$",
     func: (target: number, a: number) => {
       validate_type(target, Number, "target");
       validate_type(a, Number, "argument");
@@ -23,10 +24,11 @@ export const FORMULA_CARDS: Card[] = [
     },
   },
   {
-    name: "Subtraction",
+    name: "The Art of Reduction",
+    description: "Seperate a whole and reveal the remaining truths.`",
     tier: "Elementary",
     type: "Formula",
-    symbol: "$f(a, b) = a - b$",
+    symbol: "$f(x, y) = x - y$",
     func: (target: number, a: number) => {
       validate_type(target, Number, "target");
       validate_type(a, Number, "argument");
@@ -34,10 +36,12 @@ export const FORMULA_CARDS: Card[] = [
     },
   },
   {
-    name: "Multiplication",
+    name: "The Charm of Growth",
+    description:
+      "Achieve great abundance through the use of the dark art of multiplication.",
     tier: "Elementary",
     type: "Formula",
-    symbol: "$f(a, b) = a \\times b$",
+    symbol: "$f(x, y) = x \\times y$",
     func: (target: number, a: number) => {
       validate_type(target, Number, "target");
       validate_type(a, Number, "argument");
@@ -45,21 +49,27 @@ export const FORMULA_CARDS: Card[] = [
     },
   },
   {
-    name: "Division",
+    name: "Spell of Sharding",
+    description:
+      "Fracture a form into perfect shards. The perfect balnce of precision and chaos.",
     tier: "Elementary",
     type: "Formula",
-    symbol: "$f(a, b) = \\frac{a}{b}$",
+    symbol: "$f(x, y) = \\frac{x}{y}$",
     func: (target: number, a: number) => {
       validate_type(target, Number, "target");
       validate_type(a, Number, "argument");
       return target / a;
     },
   },
+];
+
+export const advancedFormulaDeck: Card[] = [
   {
-    name: "Power",
+    name: "Invocation of Magnitude",
+    description: "Now you're playing with **POWER!**",
     tier: "High School",
     type: "Formula",
-    symbol: "$f(a, b) = a^b$",
+    symbol: "$f(x, k) = x^k$",
     func: (target: number, a: number) => {
       validate_type(target, Number, "target");
       validate_type(a, Number, "argument");
@@ -67,10 +77,12 @@ export const FORMULA_CARDS: Card[] = [
     },
   },
   {
-    name: "Logarithm",
+    name: "Magnitude's Cipher",
+    description:
+      "Unveil hidden exponents and release the power that lies beneath the surface.",
     tier: "High School",
     type: "Formula",
-    symbol: "$f(a, b) = \\log_{a}(b)$",
+    symbol: "$f(x, b) = \\log_{b}(x)$",
     func: (target: number, a: number) => {
       validate_type(target, Number, "target");
       validate_type(a, Number, "argument");
@@ -78,15 +90,30 @@ export const FORMULA_CARDS: Card[] = [
     },
   },
   {
-    name: "Union",
-    tier: "College",
-    type: "Concept",
-    symbol: "$f(u, v) = u \\cup v$",
+    name: "Realm Inversion",
+    description: "Turn the world inside-out, and discover one's true nature.",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(x) = \\frac{1}{x}$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return 1 / target;
+    },
   },
   {
-    name: "Intersect",
-    tier: "College",
-    type: "Concept",
-    symbol: "$f(a, b) = a \\cap b$",
+    name: "The Root of Duality",
+    description: "Reveal one's true dual nature.",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(x) = \\sqrt{x}$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      const root: number = Math.sqrt(target);
+      return [-1 * root, root];
+    },
   },
 ];
+
+export const trigFormulaDeck: Card[] = [];
+
+export const statsFormulaDeck: Card[] = [];

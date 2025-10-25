@@ -39,7 +39,7 @@ interface Card {
     value: 1, // The value of the constant
     // Note: `func` is not required for constant cards
   },
-]
+];
 ```
 
 Output only TypeScript code.
