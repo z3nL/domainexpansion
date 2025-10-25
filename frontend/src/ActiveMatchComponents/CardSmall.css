@@ -1,37 +1,56 @@
 .cardSmall {
-    border: 1px solid white;
-    border-radius: 8px;
-    height: 6rem;
-    width: 7rem;
-    padding: 2.5rem 1rem 2.5rem 1rem;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
+  border: 1px solid white;
+  border-radius: 8px;
+  height: 6rem;
+  width: 7rem;
+  padding: 2.5rem 1rem 2.5rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 
-    background: hsla(230, 43%, 53%, 1);
+  background: hsla(230, 43%, 53%, 1);
 
-    background: linear-gradient(270deg, hsla(230, 43%, 53%, 1) 18%, hsla(252, 59%, 27%, 1) 53%);
+  background: linear-gradient(
+    270deg,
+    hsla(230, 43%, 53%, 1) 18%,
+    hsla(252, 59%, 27%, 1) 53%
+  );
 
-    background: -moz-linear-gradient(270deg, hsla(230, 43%, 53%, 1) 18%, hsla(252, 59%, 27%, 1) 53%);
+  background: -moz-linear-gradient(
+    270deg,
+    hsla(230, 43%, 53%, 1) 18%,
+    hsla(252, 59%, 27%, 1) 53%
+  );
 
-    background: -webkit-linear-gradient(270deg, hsla(230, 43%, 53%, 1) 18%, hsla(252, 59%, 27%, 1) 53%);
+  background: -webkit-linear-gradient(
+    270deg,
+    hsla(230, 43%, 53%, 1) 18%,
+    hsla(252, 59%, 27%, 1) 53%
+  );
 
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5364BA", endColorstr="#2C1C6C", GradientType=1 );     
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5364BA", endColorstr="#2C1C6C", GradientType=1 );
 }
 
 .cardSmallItem {
-    color: rgb(255, 255, 255);
-    padding: 1.5rem 0 1.5rem 0;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  color: rgb(255, 255, 255);
+  padding: 1.5rem 0 1.5rem 0;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #e60073,
+    0 0 40px #e60073,
+    0 0 50px #e60073,
+    0 0 60px #e60073,
+    0 0 70px #e60073;
 }
 
 .cardSmallCorners {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 .cardSmallCornerText {
-    font-size: 0.75rem;;
-    color: white;
+  font-size: 0.75rem;
+  color: white;
 }

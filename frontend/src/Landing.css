@@ -32,7 +32,6 @@
   }
 }
 
-
 .read-the-docs {
   color: #888;
 }
@@ -51,11 +50,10 @@
   width: 15rem;
   color: rgb(39, 116, 139);
   background-color: white;
-  font-family: 'Times New Roman', cursive;
+  font-family: "Times New Roman", cursive;
 }
 
 .landingFooter {
   padding-top: 1rem;
   border-top: 1px solid white;
 }
-

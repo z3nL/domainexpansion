@@ -15,17 +15,14 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  
 }
 
 .radio-label input[type="radio"] {
   cursor: pointer;
 }
 
-
-
-.select-container{
-   display: flex;
+.select-container {
+  display: flex;
   flex-direction: column;
   gap: 10rem;
 }
@@ -37,24 +34,24 @@
 
 /* Exit Button Settings*/
 .absoluteHeader {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 .exitIcon {
-    height: 2rem;
-    width: 2rem;
-    cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
 }
 
 .menu-overlay {
   width: 72rem;
   height: 37rem;
-  background: rgba(112, 69, 3);  
-  border: #666; 
-  border-radius: 5rem; 
+  background: rgba(112, 69, 3);
+  border: #666;
+  border-radius: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,8 +61,8 @@
   width: 68rem;
   height: 32rem;
   background: rgb(227, 180, 109);
-  border: #666; 
-  border-radius: 5rem; 
+  border: #666;
+  border-radius: 5rem;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -75,7 +72,7 @@
 ::-webkit-scrollbar {
   display: none;
 }
- 
+
 /* Card Styling */
 .cards-container {
   max-height: 30rem;
