@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 50px;
+  gap: 1rem;
 }
 
 .deck-type-options {
@@ -61,14 +61,16 @@ body {
 
 /* Card Styling */
 .cards-container {
-  min-height: auto;
+  /* min-height: auto; */
   overflow-y: scroll;
   display: flex;
   flex-flow: row wrap;
   width: 100rem;
   gap: 1rem;
   justify-content: center;
+  padding-top: 2rem;
 
+  /* Adds the edge fade */
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
