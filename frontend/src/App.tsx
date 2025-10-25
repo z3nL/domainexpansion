@@ -3,10 +3,10 @@ import GameContext from "./GameContext";
 import EditDeck from "./EditDeck";
 import ActiveMatch from "./ActiveMatch";
 import Landing from "./Landing";
-import type { Card } from "./game/cards";
+import type { ICard } from "./game/cards";
 
 function App() {
-  const [deck, setDeck] = useState<Card[]>([]);
+  const [deck, setDeck] = useState<ICard[]>([]);
   const [currentPage, setCurrentPage] = useState<
     "landing" | "activeMatch" | "editDeck"
   >("landing");
