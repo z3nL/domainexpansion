@@ -1,6 +1,6 @@
 import Card from './Card';
 
-function CurrentHandToPlay() {
+function CurrentHandToPlay({ handlePlayCardModal }: { handlePlayCardModal: () => void }) {
     //TODO state variable for currently selected card
     return (
         <>
@@ -15,7 +15,7 @@ function CurrentHandToPlay() {
                 <div className='selectedCardInfo'>
                     <p>[Modifies value of {"<your || opponent>"}'s score to become sin(score)]</p>
                 </div>
-                <button className='playCardButton'>Play Card</button>
+                <button className='playCardButton' onClick={handlePlayCardModal}>Play Card</button>
             </div>
         </>
     );
