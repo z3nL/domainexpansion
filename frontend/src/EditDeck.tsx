@@ -20,7 +20,7 @@ import GameContext from "./GameContext";
 import CardCounters from "./EditDeckCardCounters";
 
 function EditDeck() {
-  const [selectedDeck, setSelectedDeck] = useState<ICard[]>(constantsDeck);
+  const [selectedType, setSelectedType] = useState<ICard[]>(constantsDeck);
   const { setCurrentPage } = useContext(GameContext);
   // Have to mkae it so it only selects one option
   return (
@@ -32,7 +32,7 @@ function EditDeck() {
           className="exitIcon"
           onClick={() => setCurrentPage("landing")}
         />
-        <h2>Edit Deck</h2>
+        <h1>Edit Deck</h1>
       </div>
       <div className="edit-deck">
         <div className="deck-type-options">
@@ -42,9 +42,9 @@ function EditDeck() {
             defaultValue="Constants"
             onChange={(e) => {
               const v = (e.target as HTMLSelectElement).value;
-              if (v === "Constants") setSelectedDeck(constantsDeck);
-              else if (v === "Formulas") setSelectedDeck(formulasDeck);
-              else if (v === "Concepts") setSelectedDeck(conceptsDeck);
+              if (v === "Constants") setSelectedType(constantsDeck);
+              else if (v === "Formulas") setSelectedType(formulasDeck);
+              else if (v === "Concepts") setSelectedType(conceptsDeck);
             }}
           >
             <option value="Constants">Constants</option>
@@ -56,10 +56,10 @@ function EditDeck() {
           </div>
         </div>
         <div className="cards-container">
-          {selectedDeck.length === 0 ? (
+          {selectedType.length === 0 ? (
             <div className="empty-deck">No cards in this deck.</div>
           ) : (
-            selectedDeck.map((card, i) => (
+            selectedType.map((card, i) => (
               <Card key={`${card.name ?? "card"}-${i}`} {...card} />
             ))
           )}
