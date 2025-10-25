@@ -143,4 +143,9 @@ body {
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#535A7B", endColorstr="#2C1C6C", GradientType=1 );
 }
-/* Select Styling for the Amount of Cards */
+.deck-select option {
+  background-color: #fff;  
+  color: #333;  
+  padding: 0.5rem;
+}
+
