@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@ html, body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 50px;
+  gap: 1rem;
 }
 
 .deck-type-options {
@@ -59,27 +60,29 @@ html, body {
 
 /* Card Styling */
 .cards-container {
-  min-height: auto;
+  /* min-height: auto; */
   overflow-y: scroll;
   display: flex;
   flex-flow: row wrap;
   width: 100rem;
   gap: 1rem;
   justify-content: center;
+  padding-top: 2rem;
 
+  /* Adds the edge fade */
   -webkit-mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black 10%,
-      black 90%,
-      transparent 100%
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
   );
   mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black 10%,
-      black 90%,
-      transparent 100%
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
   );
 }
 

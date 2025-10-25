@@ -7,7 +7,7 @@ export const namedConstantsDeck: ICard[] = [
       "From the dance of infinite curves arises **π**, the rhythm of all circles and the whisper of geometry itself.",
     tier: "High School",
     type: "Constant",
-    symbol: "$\\pi$",
+    symbol: "$\\pi = 3.141\\dots$",
     value: 3.141592653589793,
   },
   {
@@ -16,7 +16,7 @@ export const namedConstantsDeck: ICard[] = [
       "**e**, the ever-growing flame — the constant of natural expansion, whose spark ignites calculus itself.",
     tier: "High School",
     type: "Constant",
-    symbol: "$e$",
+    symbol: "$e = 2.718\\dots$",
     value: 2.718281828459045,
   },
   {
@@ -25,7 +25,7 @@ export const namedConstantsDeck: ICard[] = [
       "The divine proportion **φ** — beauty incarnate in number form, woven into petals, shells, and the stars’ alignments.",
     tier: "High School",
     type: "Constant",
-    symbol: "$\\varphi$",
+    symbol: "$\\varphi = 1.618\\dots$",
     value: 1.618033988749895,
   },
   {
@@ -34,7 +34,7 @@ export const namedConstantsDeck: ICard[] = [
       "An army of particles, **6.022x10²³ strong**, marching in perfect harmony through every mole of matter.",
     tier: "College",
     type: "Constant",
-    symbol: "$N_A$",
+    symbol: "$N_A = 6.022 \\times 10^{23}$",
     value: 6.02214076e23,
   },
   {
@@ -43,7 +43,7 @@ export const namedConstantsDeck: ICard[] = [
       "**c**, the celestial messenger — constant through void and time, bearing the essence of relativity itself.",
     tier: "College",
     type: "Constant",
-    symbol: "$c$",
+    symbol: "$c = 2.998 \\times 10^{8}$",
     value: 299792458,
   },
   {
@@ -52,7 +52,7 @@ export const namedConstantsDeck: ICard[] = [
       "**G**, the unseen bond between stars, the silent architect of galaxies and time's curvature.",
     tier: "PhD",
     type: "Constant",
-    symbol: "$G$",
+    symbol: "$G = 6.674 \\times 10^{-11}$",
     value: 6.6743e-11,
   },
 ];

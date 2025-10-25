@@ -23,6 +23,13 @@
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5364BA", endColorstr="#2C1C6C", GradientType=1 );
   border-radius: 8px;
   box-shadow: 0 1px 1px rgba(106, 41, 41, 0.3);
+
+  cursor: pointer;
+}
+
+[class^="card_"]:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
 
 .card_Unselected {
@@ -79,6 +86,7 @@
   margin-bottom: 20px;
   margin-left: 10px;
 }
+
 .card-description {
   background-color: #b1b1b1;
   border: #090707;
