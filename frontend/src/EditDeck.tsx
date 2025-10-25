@@ -2,16 +2,10 @@ import "./Landing.css";
 import "./EditDeck.css";
 import Card from "./ActiveMatchComponents/Card";
 import exitIcon from "./assets/exit.png";
-
-import { namedConstantsDeck, numericConstantDeck } from "./game/constants";
-import { advancedFormulaDeck, elementaryFormulaDeck } from "./game/formulas";
-import { conceptDeck } from "./game/concepts";
 import { useState } from "react";
 import type { ICard } from "./game/cards";
 
-const constantsDeck = [...namedConstantsDeck, ...numericConstantDeck];
-const formulasDeck = [...elementaryFormulaDeck, ...advancedFormulaDeck];
-const conceptsDeck = [...conceptDeck];
+import { constantsDeck, formulasDeck, conceptsDeck } from "./game/decks";
 
 // State variable for changing which deck is selected and displayed
 

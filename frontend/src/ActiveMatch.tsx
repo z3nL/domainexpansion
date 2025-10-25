@@ -13,17 +13,6 @@ import type { ICard } from "./game/cards";
 
 // TODO implement state management for active match data and navigation back to landing page
 
-/**
- * Draws a single card from the given deck.
- * The card is removed from the deck after drawing.
- * @param {ICard[]} deck The deck to draw from.
- * @returns {ICard} The drawn card.
- */
-function drawCard(deck: ICard[]): ICard {
-  const index = Math.floor(Math.random() * deck.length);
-  return deck.splice(index, 1)[0];
-}
-
 function ActiveMatch() {
   const { deck } = useContext(GameContext);
 
