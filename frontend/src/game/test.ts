@@ -1,10 +1,10 @@
-import { CONSTANT_CARDS } from "./constants.ts";
+import { namedConstantsDeck } from "./constants.ts";
 import { FORMULA_CARDS } from "./formulas.ts";
 import { evaluate_formula } from "./cards.ts";
 
 // Example usage
-const oneCard = CONSTANT_CARDS.find((card) => card.name === "One");
-const twoCard = CONSTANT_CARDS.find((card) => card.name === "Two");
+const oneCard = namedConstantsDeck.find((card) => card.name === "One");
+const twoCard = namedConstantsDeck.find((card) => card.name === "Two");
 const additionCard = FORMULA_CARDS.find((card) => card.name === "Addition");
 const subtractionCard = FORMULA_CARDS.find(
   (card) => card.name === "Subtraction",

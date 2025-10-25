@@ -13,6 +13,7 @@ type Type = "Constant" | "Formula" | "Concept";
  */
 interface Card {
   name: string;
+  description: string;
   tier: Tier;
   type: Type;
   symbol: string; // String to be interpreted in MarkDown
