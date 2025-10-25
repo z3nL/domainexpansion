@@ -1,8 +1,15 @@
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 .edit-deck {
+  height: 85vh;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 7rem;
+  gap: 50px;
 }
 
 .deck-type-options {
@@ -52,14 +59,28 @@
 
 /* Card Styling */
 .cards-container {
-  max-height: 30rem;
   min-height: auto;
-  overflow-y: auto;
+  overflow-y: scroll;
   display: flex;
   flex-flow: row wrap;
   width: 100rem;
   gap: 1rem;
   justify-content: center;
+
+  -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+  );
+  mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+  );
 }
 
 #deck-type-select {
