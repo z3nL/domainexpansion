@@ -63,7 +63,8 @@
 
 .card {
   width: 20rem;
-  border: 3px solid rgb(177, 186, 231);
+  border: 3px solid rgb(231, 226, 177);
+  /* border: 5px solid rgb(248, 226, 34); */
   background: hsla(230, 43%, 53%, 1);
 
   background: linear-gradient(
@@ -183,6 +184,7 @@
   border-radius: 4px;
   border: 1px solid #ccc;
   background: hsla(229, 19%, 40%, 1);
+  height: 3rem;
 
   background: linear-gradient(180deg, hsla(229, 19%, 40%, 1) 18%, hsla(252, 59%, 27%, 1) 67%);
 
