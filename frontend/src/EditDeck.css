@@ -31,7 +31,8 @@ body {
 
 .select-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   gap: 10rem;
 }
 
@@ -142,3 +143,4 @@ body {
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#535A7B", endColorstr="#2C1C6C", GradientType=1 );
 }
+ /* Select Styling for the Amount of Cards */
