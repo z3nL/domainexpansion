@@ -41,7 +41,13 @@ function EditDeck() {
                         </label>
                     </div>
                     <div className="cards-container">
-                        <Card />
+                          <Card 
+                            name="sin(x)" 
+                            type="Formula" 
+                            power="90"
+                            symbol="sin(x) = opposite/hypotenuse"
+                            description="Sine function for right triangles"
+                        />
                         <Card />
                         <Card />
                         <Card />
