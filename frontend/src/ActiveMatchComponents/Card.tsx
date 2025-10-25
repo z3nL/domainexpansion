@@ -1,9 +1,8 @@
 function Card() {
-    //TODO state variable for card details
+    //TODO format cards
     return (
         <div className="card">
-            <h3>Card Title</h3>
-            <p>Card Description</p>
+            <h3>sin(x)</h3>
         </div>
     );
 }

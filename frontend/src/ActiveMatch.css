@@ -1,3 +1,17 @@
+.absoluteHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.exitIcon {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
 .matchInfoHeader {
     display: flex;
     flex-flow: row nowrap;
@@ -9,7 +23,7 @@
 
 .matchInfoItem {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     gap: 1rem;
     width: 3rem;
     align-items: center;
@@ -46,4 +60,8 @@
 
 .selectedCardInfo {
     max-height: 5rem;
+}
+
+.card {
+    border: 1px solid white;
 }

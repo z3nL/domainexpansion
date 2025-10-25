@@ -1,5 +1,5 @@
 function MatchInformationHeader() {
-    // TODO state variables for player scores and turns left
+    // TODO state variables for player scores, turns left, and cards remaining
     return (
         <div className="matchInfoHeader">
             <div className='matchInfoItem'>
@@ -13,6 +13,10 @@ function MatchInformationHeader() {
             <div className='matchInfoItem'>
                 <h3>Turns Left</h3>
                 <p>[12]</p>
+            </div>
+            <div className='matchInfoItem'>
+                <h3>Cards Remaining</h3>
+                <p>[24]</p>
             </div>
         </div>
     );

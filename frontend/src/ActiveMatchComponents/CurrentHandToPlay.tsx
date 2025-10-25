@@ -13,7 +13,7 @@ function CurrentHandToPlay() {
                     <Card />
                 </div>
                 <div className='selectedCardInfo'>
-                    <p>[Selected Card Info]</p>
+                    <p>[Modifies value of {"<your || opponent>"}'s score to become sin(score)]</p>
                 </div>
                 <button className='playCardButton'>Play Card</button>
             </div>
