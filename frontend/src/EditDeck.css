@@ -84,11 +84,30 @@
 }
 
 .card {
-  border: 5px solid #ddd;
-  background: linear-gradient(135deg, #3b3b37 0%, #dcc608 100%);
-  border-radius: 7px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.3);
+  border: 3px solid #1c0547;
+  background: hsla(230, 43%, 53%, 1);
+
+  background: linear-gradient(
+    270deg,
+    hsla(230, 43%, 53%, 1) 18%,
+    hsla(252, 59%, 27%, 1) 53%
+  );
+
+  background: -moz-linear-gradient(
+    270deg,
+    hsla(230, 43%, 53%, 1) 18%,
+    hsla(252, 59%, 27%, 1) 53%
+  );
+
+  background: -webkit-linear-gradient(
+    270deg,
+    hsla(230, 43%, 53%, 1) 18%,
+    hsla(252, 59%, 27%, 1) 53%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5364BA", endColorstr="#2C1C6C", GradientType=1 );
+  border-radius: 8px;
+  box-shadow: 0 1px 1px rgba(106, 41, 41, 0.3);
 }
 
 .card-header {
@@ -102,12 +121,14 @@
   font-size: 20px;
   margin: 0;
   color: black;
-  text-align: left;
+  margin-left: 4px;
+
 }
 .card-power {
   font-size: 18px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.76);
+  margin-right: 4px;
 }
 .card-type {
   font-size: 12px;
@@ -116,7 +137,7 @@
   text-transform: uppercase;
 }
 .card-image-box {
-  width: 100%;
+  width: 90%;
   height: 100px;
   background-color: white;
   border-radius: 5px;
@@ -124,23 +145,29 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 .card-description {
-  background-color: #f5f5dc;
-  border: 2px solid #8b7355;
-  border-radius: 8px;
+  background-color: rgba(177, 186, 231, 0.384);;
+  border: #090707;
+  border-radius: 10px;
   padding: 12px;
   min-height: 60px;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 .card-description p {
   margin: 0;
   font-size: 14px;
-  color: #333;
+  color: #090707;
   line-height: 1.4;
 }
 
 .card p {
   margin: 0;
-  color: #666;
+  color: #120707;
 }
