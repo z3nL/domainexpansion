@@ -2,6 +2,10 @@ import GameContext from "./GameContext";
 import { useContext } from "react";
 import type { ICard } from "./game/cards";
 
+const MAX_CONSTANT_CARDS = 10;
+const MAX_FORMULA_CARDS = 5;
+const MAX_CONCEPT_CARDS = 5;
+
 /**
  * Checks if the given card is a valid ICard object
  * @param {any} card The card to check
@@ -76,10 +80,17 @@ function CardCounters() {
   const { deck } = useContext(GameContext);
   return (
     <div>
-      <div>Constants: {countConstantCards(deck)}</div>
-      <div>Formulas: {countFormulaCards(deck)}</div>
-      <div>Concepts: {countConceptCards(deck)}</div>
+      <div>
+        Constants: {countConstantCards(deck)} / {MAX_CONSTANT_CARDS}
+      </div>
+      <div>
+        Formulas: {countFormulaCards(deck)} / {MAX_FORMULA_CARDS}
+      </div>
+      <div>
+        Concepts: {countConceptCards(deck)} / {MAX_CONCEPT_CARDS}
+      </div>
     </div>
   );
 }
 export default CardCounters;
+export { countConstantCards, countFormulaCards, countConceptCards };
