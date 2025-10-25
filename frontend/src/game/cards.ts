@@ -81,5 +81,24 @@ function evaluate_formula(
   return formula.func(target, ...argValues);
 }
 
-export { evaluate_formula, validate_type };
+/**
+ * Looks up the power value of a given tier
+ *
+ * @param tier The tier of the card
+ * @returns The power value of the given tier
+ */
+function powerLookupTable(tier: Tier): number {
+  switch (tier) {
+    case "Elementary":
+      return 1;
+    case "High School":
+      return 5;
+    case "College":
+      return 10;
+    case "PhD":
+      return 20;
+  }
+}
+
+export { evaluate_formula, validate_type, powerLookupTable };
 export type { ICard, Tier, Type };
