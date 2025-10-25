@@ -66,6 +66,10 @@
     border: 1px solid white;
 }
 
+.cardTitle {
+    color: black;
+}
+
 .playCardButton {
     width: 15rem;
     color: rgb(39, 116, 139);
