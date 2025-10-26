@@ -6,6 +6,8 @@ Build your knowledge and your deck to conquer your opponents and your next math 
 
 A turn-based card game where your objective is to leverage your mathematical understanding to out maneuver your opponent. Inspired by a fictional card game from an instagram video, Domain Expansion is intended to provide a fun way to learn, practice, and retain math concepts.
 
+[Video Demo](https://www.youtube.com/watch?v=0bLkd-mHKKI&t=56s)
+
 ### Quick Links
 
 - [Implementation](#implementation)
@@ -40,7 +42,7 @@ A turn-based card game where your objective is to leverage your mathematical und
 
 #### Peer-2-Peer game hosting with web sockets
 
-We figured this system would be (relatively) quick and easy to set up and implement. To eleminate the need for extra logic to simulate a "host", we chose to use a server as a middleman relay so that both players could use the same client side logic.
+We figured this system would be (relatively) quick and easy to set up and implement. To eliminate the need for extra logic to simulate a "host", we chose to use a server as a middleman relay so that both players could use the same client side logic.
 
 Player 1 <===> Server <===> Player 2
 
