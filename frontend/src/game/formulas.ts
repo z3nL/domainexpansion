@@ -97,6 +97,9 @@ export const advancedFormulaDeck: ICard[] = [
     symbol: "$f(x) = \\frac{1}{x}$",
     func: (target: number) => {
       validate_type(target, Number, "target");
+      if (target === 0){
+        return 0.001
+      }
       return 1 / target;
     },
   },
