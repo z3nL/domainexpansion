@@ -90,6 +90,9 @@ async def websocket_endpoint(websocket: WebSocket):
             room.player2 = None
             print("Player 2 disconnected")
 
+    except Exception as e:
+        print("An error occurred:", e)
+
 
 def main():
     import uvicorn
