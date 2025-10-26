@@ -11,7 +11,7 @@ export const conceptDeck: ICard[] = [
     symbol: "$f(x) = -1 \\times x$",
     func: (target: number) => {
       validate_type(target, Number, "target");
-      return -1 * target;
+      return target * -1;
     },
   },
   // {
