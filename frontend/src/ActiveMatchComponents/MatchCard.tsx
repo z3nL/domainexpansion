@@ -46,10 +46,11 @@ function MatchCard({ card, handlePlayCardModal }: {card: ICard, handlePlayCardMo
           </ReactMarkdown>
         </div>
       </div>
-
-        <button className="playCardButton" onClick={handlePlayCardModal}>
-            Play Card
-        </button>
+        { card.type !== "Constant" && (
+          <button className="playCardButton" onClick={handlePlayCardModal}>
+              Play Card
+          </button>
+        )}
     </div>
   );
 }

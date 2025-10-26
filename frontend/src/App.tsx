@@ -17,9 +17,9 @@ function App() {
 
   // Websocket Connection
   const { isConnected, sendMessage } = useWebSocket ({
-    url: 'ws://localhost:8080/',
+    url: 'ws://localhost:4545/ws/',
     onMessage: (data) => {
-      console.log('Recieved from server: ', data);
+      console.log('Received from server: ', data);
 
       // Different Message Handling
       if (data.type === "gameCreated") {
@@ -30,6 +30,13 @@ function App() {
         setCurrentPage("activeMatch");
       } else if (data.type === "opponentMove") {
         console.log("Opponent played:", data);
+      } else if (data.role) {
+        // Handle GameRole assignment from Python server
+        console.log("Assigned role:", data.role);
+      } else if (data.error) {
+        console.log("Server error:", data.error);
+      } else {
+        console.log("Unknown message type:", data);
       }
     },
        onOpen: () => {

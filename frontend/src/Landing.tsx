@@ -11,7 +11,9 @@ function Landing() {
       return;
     }
 
-    setCurrentPage("waitingForGame");
+    // TODO override
+    //setCurrentPage("waitingForGame");
+    setCurrentPage("activeMatch")
 
 
     sendGameMessage?. ({
