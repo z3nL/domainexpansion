@@ -2,6 +2,7 @@ import "./Landing.css";
 import "./EditDeck.css";
 import Card from "./ActiveMatchComponents/Card";
 import exitIcon from "./assets/exit.png";
+import editDeckHeader from "./assets/editDeck.png";
 import { useState } from "react";
 import type { ICard } from "./game/cards";
 
@@ -26,7 +27,7 @@ function EditDeck() {
           className="exitIcon"
           onClick={() => setCurrentPage("landing")}
         />
-        <h1>Edit Deck</h1>
+        <img src={editDeckHeader} alt="Edit Deck Header" className="editDeckHeader" />
       </div>
       <div className="edit-deck">
         <div className="deck-type-options">

@@ -1,6 +1,7 @@
 import "./Landing.css";
 import "./ActiveMatch.css";
 import exitIcon from "./assets/exit.png";
+import activeMatchHeader from "./assets/activeMatch.png";
 import { useEffect, useState } from "react";
 import MatchInformationHeader from "./ActiveMatchComponents/MatchInformationHeader";
 import TurnInformation from "./ActiveMatchComponents/TurnInformation";
@@ -111,7 +112,7 @@ function ActiveMatch() {
           className="exitIcon"
           onClick={handleExitWrapper}
         />
-        <h1>Active Match</h1>
+        <img src={activeMatchHeader} alt="Active Match Header" className="activeMatchHeader" />
       </div>
       <MatchInformationHeader
         {...{
