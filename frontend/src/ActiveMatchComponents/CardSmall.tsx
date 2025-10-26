@@ -9,15 +9,16 @@ import ActiveMatchContext from "../ActiveMatchContext";
 import GameContext from "../GameContext";
 import { useContext, useState } from "react";
 
-function CardSmall({ card }: {card: ICard}) {
-  const { selectedConstants, setSelectedConstants } = useContext(ActiveMatchContext);
+function CardSmall({ card }: { card: ICard }) {
+  const { selectedConstants, setSelectedConstants } =
+    useContext(ActiveMatchContext);
   const { isPlayingCard } = useContext(GameContext);
   const [isSelected, setIsSelected] = useState(false);
 
   const handleSelectCard = () => {
     if (isSelected) {
       setSelectedConstants(
-        selectedConstants.filter((c: { name: string }) => c.name !== card.name)
+        selectedConstants.filter((c: { name: string }) => c.name !== card.name),
       );
     } else {
       setSelectedConstants([...selectedConstants, card]);
@@ -27,7 +28,10 @@ function CardSmall({ card }: {card: ICard}) {
 
   //TODO format cards
   return (
-    <div className={`cardSmall_${isPlayingCard ? "IsPlayingCard" : ""}${isSelected ? "_IsSelected" : ""}`} onClick={handleSelectCard}>
+    <div
+      className={`cardSmall_${isPlayingCard ? "IsPlayingCard" : ""}${isSelected ? "_IsSelected" : ""}`}
+      onClick={handleSelectCard}
+    >
       <div className="cardSmallCorners">
         <p className="cardSmallCornerText">{card?.tier}</p>
         <p className="cardSmallCornerText">

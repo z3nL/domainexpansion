@@ -25,10 +25,10 @@ function App() {
   };
 
   // Websocket Connection
-  const { isConnected, sendMessage } = useWebSocket ({
-    url: 'ws://localhost:4545/ws/',
+  const { isConnected, sendMessage } = useWebSocket({
+    url: "ws://localhost:4545/ws/",
     onMessage: (data) => {
-      console.log('Received from server: ', data);
+      console.log("Received from server: ", data);
 
       // Different Message Handling
       if (data.type === "gameCreated") {
@@ -48,19 +48,18 @@ function App() {
         console.log("Unknown message type:", data);
       }
     },
-       onOpen: () => {
-      console.log('Connected to game server!');
+    onOpen: () => {
+      console.log("Connected to game server!");
     },
     onClose: () => {
-      console.log('Disconnected from game server');
+      console.log("Disconnected from game server");
       if (currentPage === "waitingForGame") {
-        setCurrentPage('landing');
+        setCurrentPage("landing");
       }
     },
     onError: (error) => {
-      console.error('Connection error:', error);
-    }
-    
+      console.error("Connection error:", error);
+    },
   });
 
   if (deck.length === 0) {
@@ -69,7 +68,21 @@ function App() {
 
   return (
     <>
-      <GameContext.Provider value={{ setCurrentPage, deck, setDeck, currentPage, gameId, setGameId, isConnected, sendGameMessage: sendMessage, isPlayingCard, handlePlayCardModal, cardBeingPlayed }}>
+      <GameContext.Provider
+        value={{
+          setCurrentPage,
+          deck,
+          setDeck,
+          currentPage,
+          gameId,
+          setGameId,
+          isConnected,
+          sendGameMessage: sendMessage,
+          isPlayingCard,
+          handlePlayCardModal,
+          cardBeingPlayed,
+        }}
+      >
         {currentPage === "landing" && <Landing />}
         {currentPage === "waitingForGame" && <WaitingForGame />}
         {currentPage === "activeMatch" && <ActiveMatch />}
@@ -81,22 +94,28 @@ function App() {
 // Waiting page
 function WaitingForGame() {
   const { setCurrentPage, isConnected } = useContext(GameContext);
-  
+
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      gap: '2rem'
-    }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        gap: "2rem",
+      }}
+    >
       <h1>Waiting for Game...</h1>
       <div className="spinner">⏳</div>
-      <p>{isConnected ? 'Connected - Creating game...' : 'Connecting to server...'}</p>
-      <button 
+      <p>
+        {isConnected
+          ? "Connected - Creating game..."
+          : "Connecting to server..."}
+      </p>
+      <button
         className="landingButton"
-        onClick={() => setCurrentPage('landing')}
+        onClick={() => setCurrentPage("landing")}
       >
         Cancel
       </button>

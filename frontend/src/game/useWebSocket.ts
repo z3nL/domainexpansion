@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface UseWebSocketProps {
   url: string;
@@ -8,7 +8,13 @@ interface UseWebSocketProps {
   onError?: (error: Event) => void;
 }
 
-export function useWebSocket({ url, onMessage, onOpen, onClose, onError }: UseWebSocketProps) {
+export function useWebSocket({
+  url,
+  onMessage,
+  onOpen,
+  onClose,
+  onError,
+}: UseWebSocketProps) {
   const [isConnected, setIsConnected] = useState(false);
   const ws = useRef<WebSocket | null>(null);
 
@@ -16,7 +22,7 @@ export function useWebSocket({ url, onMessage, onOpen, onClose, onError }: UseWe
     ws.current = new WebSocket(url);
 
     ws.current.onopen = () => {
-      console.log('WebSocket connected');
+      console.log("WebSocket connected");
       setIsConnected(true);
       onOpen?.();
     };
@@ -26,18 +32,18 @@ export function useWebSocket({ url, onMessage, onOpen, onClose, onError }: UseWe
         const data = JSON.parse(event.data);
         onMessage?.(data);
       } catch (e) {
-        console.error('Failed to parse message:', e);
+        console.error("Failed to parse message:", e);
       }
     };
 
     ws.current.onclose = () => {
-      console.log('WebSocket disconnected');
+      console.log("WebSocket disconnected");
       setIsConnected(false);
       onClose?.();
     };
 
     ws.current.onerror = (error) => {
-      console.error('WebSocket error:', error);
+      console.error("WebSocket error:", error);
       onError?.(error);
     };
 
@@ -50,7 +56,7 @@ export function useWebSocket({ url, onMessage, onOpen, onClose, onError }: UseWe
     if (ws.current && ws.current.readyState === WebSocket.OPEN) {
       ws.current.send(JSON.stringify(data));
     } else {
-      console.error('WebSocket is not connected');
+      console.error("WebSocket is not connected");
     }
   };
 

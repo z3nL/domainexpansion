@@ -5,27 +5,26 @@ const initializeMatch = (
   deck: ICard[],
   setMatchDeck: (deck: ICard[]) => void,
   setCurrentHand: (hand: ICard[]) => void,
-  maxHandSize: number
+  maxHandSize: number,
 ) => {
-    const deckSize = deck.length;
-    const deckClone = [...deck];
-  
-    const shuffledDeck: ICard[] = [];
-    for (let i = 0; i < deckSize; i++) {
-        shuffledDeck.push(drawCard(deckClone));
+  const deckSize = deck.length;
+  const deckClone = [...deck];
 
-        if (deckClone.length === 0) {
-            break;
-        }
+  const shuffledDeck: ICard[] = [];
+  for (let i = 0; i < deckSize; i++) {
+    shuffledDeck.push(drawCard(deckClone));
+
+    if (deckClone.length === 0) {
+      break;
     }
+  }
 
-  
   // Deal the first maxHandSize cards to the hand
   const currentHand = shuffledDeck.splice(0, maxHandSize);
-  
+
   // The remaining cards become the match deck
   const matchDeck = shuffledDeck;
-  
+
   // Update state
   setMatchDeck(matchDeck);
   setCurrentHand(currentHand);

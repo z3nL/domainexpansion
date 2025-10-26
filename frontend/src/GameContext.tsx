@@ -5,7 +5,9 @@ interface GameContextType {
   deck: ICard[];
   setDeck: (deck: ICard[]) => void;
   currentPage: "landing" | "activeMatch" | "editDeck" | "waitingForGame";
-  setCurrentPage: (page: "landing" | "activeMatch" | "editDeck" | "waitingForGame") => void;
+  setCurrentPage: (
+    page: "landing" | "activeMatch" | "editDeck" | "waitingForGame",
+  ) => void;
   gameId?: string;
   setGameId?: (id: string) => void;
   isConnected?: boolean;

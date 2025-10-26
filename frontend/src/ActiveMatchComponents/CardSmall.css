@@ -33,7 +33,9 @@
 
 .cardSmall_IsPlayingCard:hover {
   border: 3px solid rgb(248, 226, 34);
-  transition: border-color 150ms ease, box-shadow 150ms ease;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
   box-shadow: 0 0 8px rgba(248, 226, 34, 0.6);
 }
 

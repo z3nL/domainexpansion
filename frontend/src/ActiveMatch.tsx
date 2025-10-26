@@ -67,7 +67,7 @@ function ActiveMatch() {
         currentHand,
         setCurrentHand,
         maxHandSize,
-        selectedConstants, 
+        selectedConstants,
         setSelectedConstants,
       }}
     >
@@ -90,9 +90,7 @@ function ActiveMatch() {
       />
       <TurnInformation />
       <CurrentHandToPlay currentHand={currentHand} />
-      {isPlayingCard && (
-        <PlayCardModal />
-      )}
+      {isPlayingCard && <PlayCardModal />}
     </ActiveMatchContext.Provider>
   );
 }

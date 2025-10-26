@@ -1,4 +1,3 @@
-
 type HandleExitParams = {
   isConfirmingExit: boolean;
   setIsConfirmingExit: (v: boolean) => void;
@@ -16,7 +15,7 @@ const handleExit = ({
 }: HandleExitParams) => {
   if (!isConfirmingExit) {
     window.alert(
-      "Are you sure you want to exit the match? Click exit again within 5 seconds to confirm."
+      "Are you sure you want to exit the match? Click exit again within 5 seconds to confirm.",
     );
     setIsConfirmingExit(true);
     setIsConfirmingExit_time(Date.now());

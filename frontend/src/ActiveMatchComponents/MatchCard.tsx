@@ -8,14 +8,11 @@ import "./Card.css";
 import GameContext from "../GameContext";
 import { useContext } from "react";
 
-function MatchCard({ card }: {card: ICard}) {
-
+function MatchCard({ card }: { card: ICard }) {
   const { handlePlayCardModal } = useContext(GameContext);
 
   return (
-    <div
-      className={`card_nonSelectable`}
-    >
+    <div className={`card_nonSelectable`}>
       <div className="card-header">
         <h3 className="card-name">{card.name}</h3>
         <span className="card-power">{powerLookupTable(card.tier)}</span>
@@ -42,11 +39,14 @@ function MatchCard({ card }: {card: ICard}) {
           </ReactMarkdown>
         </div>
       </div>
-        { card.type !== "Constant" && (
-          <button className="playCardButton" onClick={() => handlePlayCardModal?.(card)}>
-              Play Card
-          </button>
-        )}
+      {card.type !== "Constant" && (
+        <button
+          className="playCardButton"
+          onClick={() => handlePlayCardModal?.(card)}
+        >
+          Play Card
+        </button>
+      )}
     </div>
   );
 }
