@@ -3,6 +3,7 @@ import GameContext from "./GameContext";
 import EditDeck from "./EditDeck";
 import ActiveMatch from "./ActiveMatch";
 import Landing from "./Landing";
+import EndOfMatch from "./EndOfMatch";
 import type { ICard } from "./game/cards";
 import type { IMatchPayload } from "./matchPayload";
 import { randomDeck } from "./game/decks";
@@ -11,7 +12,7 @@ import { useWebSocket } from "./game/useWebSocket";
 function App() {
   const [deck, setDeck] = useState<ICard[]>([]);
   const [currentPage, setCurrentPage] = useState<
-    "landing" | "activeMatch" | "editDeck" | "waitingForGame"
+    "landing" | "activeMatch" | "editDeck" | "waitingForGame" | "endOfMatch"
   >("landing");
 
   const [gameId, setGameId] = useState<string>("");
@@ -89,12 +90,14 @@ function App() {
           handlePlayCardModal,
           cardBeingPlayed,
           matchStatus,
+          setMatchStatus
         }}
       >
         {currentPage === "landing" && <Landing />}
         {currentPage === "waitingForGame" && <WaitingForGame />}
         {currentPage === "activeMatch" && <ActiveMatch />}
         {currentPage === "editDeck" && <EditDeck />}
+        {currentPage === "endOfMatch" && <EndOfMatch />}
       </GameContext.Provider>
     </>
   );

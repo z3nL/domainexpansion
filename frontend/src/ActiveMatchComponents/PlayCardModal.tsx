@@ -19,6 +19,7 @@ function PlayCardModal() {
     cardBeingPlayed,
     sendGameMessage,
     playerNumber,
+    setMatchStatus,
   } = useContext(GameContext);
   const {
     beginNextTurn,
@@ -28,9 +29,7 @@ function PlayCardModal() {
     selectedConstants,
     setSelectedConstants,
     playerOneScore,
-    setPlayerOneScore,
     playerTwoScore,
-    setPlayerTwoScore,
     maxHandSize,
   } = useContext(ActiveMatchContext);
   const [targetValue, setTargetValue] = useState("Self");
@@ -56,6 +55,7 @@ function PlayCardModal() {
     }
 
     let isGameOver = false;
+    let winner = "player one";
 
     const targetPlayer =
       targetValue === "Self" ? playerNumber : playerNumber === 1 ? 2 : 1;
@@ -68,9 +68,6 @@ function PlayCardModal() {
     } else {
       newPlayerTwoScore = result;
     }
-
-    setPlayerOneScore(newPlayerOneScore);
-    setPlayerTwoScore(newPlayerTwoScore);
 
     // Remove cardBeingPlayed and selectedConstants from currentHand
     const newHand = currentHand.filter(
@@ -98,6 +95,34 @@ function PlayCardModal() {
     if (newTurnNumber === -1) {
       isGameOver = true;
     }
+   
+    if (!Number.isFinite(newPlayerOneScore) || !Number.isFinite(newPlayerTwoScore)) {
+      isGameOver = true;
+    }
+
+    if (isGameOver) {
+      console.log("Game over condition met");
+      if (!Number.isFinite(newPlayerOneScore)) {
+        console.log("win by infinite P1");
+        winner = "player one";
+      } else if (!Number.isFinite(newPlayerTwoScore)) {
+        console.log("win by infinite P2");
+        winner = "player two";
+      } else if (newPlayerOneScore > newPlayerTwoScore) {
+        console.log("win by score P1");
+        winner = "player one";
+      } else if (newPlayerTwoScore > newPlayerOneScore) {
+        console.log("win by score P2");
+        winner = "player two";
+      } else {
+        console.log("draw by score");
+        winner = "Draw!";
+      }
+    }
+    else{
+      console.log("Game continues to next turn");
+    }
+    
 
     // SEND PACKET to server with updated info
     const payload: IMatchPayload = {
@@ -109,6 +134,7 @@ function PlayCardModal() {
       winner: "player one", // TODO: Implement winner determination
     };
     sendGameMessage(payload);
+    setMatchStatus(payload);
 
     // Close modal
     handlePlayCardModal?.(null);

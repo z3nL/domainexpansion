@@ -5,9 +5,9 @@ import type { IMatchPayload } from "./matchPayload";
 interface GameContextType {
   deck: ICard[];
   setDeck: (deck: ICard[]) => void;
-  currentPage: "landing" | "activeMatch" | "editDeck" | "waitingForGame";
+  currentPage: "landing" | "activeMatch" | "editDeck" | "waitingForGame" | "endOfMatch";
   setCurrentPage: (
-    page: "landing" | "activeMatch" | "editDeck" | "waitingForGame",
+    page: "landing" | "activeMatch" | "editDeck" | "waitingForGame" | "endOfMatch",
   ) => void;
   gameId?: string;
   setGameId?: (id: string) => void;
@@ -18,6 +18,7 @@ interface GameContextType {
   cardBeingPlayed: ICard | null;
   playerNumber: number;
   matchStatus: IMatchPayload | null;
+  setMatchStatus: (status: IMatchPayload | null) => void;
 }
 
 const GameContext = createContext<GameContextType>({
@@ -31,6 +32,7 @@ const GameContext = createContext<GameContextType>({
   cardBeingPlayed: null,
   playerNumber: 0,
   matchStatus: null,
+  setMatchStatus: () => {},
 });
 
 export default GameContext;
