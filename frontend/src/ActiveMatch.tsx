@@ -21,9 +21,9 @@ function ActiveMatch() {
     useContext(GameContext);
 
   const maxHandSize: number = 6;
-  const maxTurns: number = 10; // TODO: Change to 20 later
+  const MAX_TURNS: number = 5; // TODO: Change to 20 later
   const beginNextTurn = () => {
-    if (currentTurn < maxTurns) {
+    if (currentTurn < MAX_TURNS) {
       return currentTurn + 1;
     } else {
       // End match
@@ -118,7 +118,7 @@ function ActiveMatch() {
         {...{
           playerOneScore: playerOneScore,
           playerTwoScore: playerTwoScore,
-          turnsRemaining: maxTurns - currentTurn,
+          turnsRemaining: MAX_TURNS - currentTurn,
           cardsRemaining: matchDeck.length,
         }}
       />
