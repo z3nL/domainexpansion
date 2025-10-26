@@ -20,10 +20,9 @@ function ActiveMatch() {
     useContext(GameContext);
 
   const maxHandSize: number = 6;
-  const maxTurns: number = 10; // TODO: Change to 20 later
+  const maxTurns: number = 4; // TODO: Change to 20 later
   const beginNextTurn = () => {
     if (currentTurn < maxTurns) {
-      setCurrentTurn(currentTurn + 1);
       return currentTurn + 1;
     } else {
       // End match
@@ -69,7 +68,7 @@ function ActiveMatch() {
 
   // When the match is over, return to the landing page
   useEffect(() => {
-    if (!inMatch) {
+    if (!inMatch && !matchStatus?.isGameOver) {
       setCurrentPage("landing");
     }
   }, [inMatch, setCurrentPage]);
@@ -80,6 +79,10 @@ function ActiveMatch() {
       setPlayerOneScore(matchStatus.playerOneScore);
       setPlayerTwoScore(matchStatus.playerTwoScore);
       setCurrentTurn(matchStatus.currentTurn);
+      if (matchStatus.isGameOver) {
+        setInMatch(false);
+        setCurrentPage("endOfMatch");
+      }
     }
   }, [matchStatus]);
 
