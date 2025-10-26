@@ -4,6 +4,7 @@ import {
   elementaryFormulaDeck,
   statsFormulaDeck,
   trigFormulaDeck,
+  physicsFormulaDeck, geometryFormulaDeck
 } from "./formulas";
 import { conceptDeck } from "./concepts";
 
@@ -15,6 +16,8 @@ const formulasDeck: ICard[] = [
   ...advancedFormulaDeck,
   ...statsFormulaDeck,
   ...trigFormulaDeck,
+  ...physicsFormulaDeck,
+  ...geometryFormulaDeck
 ];
 const conceptsDeck: ICard[] = [...conceptDeck];
 

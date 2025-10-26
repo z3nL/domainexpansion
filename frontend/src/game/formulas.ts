@@ -167,6 +167,21 @@ export const trigFormulaDeck: ICard[] = [
       return target ** 2 + a ** 2;
     },
   },
+
+];
+
+export const geometryFormulaDeck: ICard[] = [
+  {
+    name: "Around the Global in 360 Degrees",
+    description: "Take a trip around the world, and the unit circle.",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(r) = 2 \\pi r$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return 2 * Math.PI * target;
+    },
+  },
   {
     name: "Discriminant",
     description: "Dont judge based off number",
@@ -180,6 +195,10 @@ export const trigFormulaDeck: ICard[] = [
       return target ** 2 - (4 * a * c);
     },
   },
+];
+
+export const physicsFormulaDeck: ICard[] = [
+
   {
     name: "Kinetic Energy",
     description: "Give me your energy",
@@ -203,21 +222,6 @@ export const trigFormulaDeck: ICard[] = [
       validate_type(v, Number, "argument");
       validate_type(r, Number, "argument");
       return (target * v ** 2) / r;
-    },
-  },
-
-];
-
-export const geometryFormulaDeck: ICard[] = [
-  {
-    name: "Around the Global in 360 Degrees",
-    description: "Take a trip around the world, and the unit circle.",
-    tier: "High School",
-    type: "Formula",
-    symbol: "$f(r) = 2 \\pi r$",
-    func: (target: number) => {
-      validate_type(target, Number, "target");
-      return 2 * Math.PI * target;
     },
   },
 ];
