@@ -70,6 +70,8 @@ npm i # install dependencies
 
 #### Zen
 
+I have never tried making a game, but it was lots of fun discussing the game concept and coming together to design it. Learning TypeScript was a bit of a learning curve for me at first, but as I got comfortable it felt easier to work with than JavaScript. I also put serious focus into app appearance for the first time in a while and was able to write intentful CSS. Besides that, I'm already familiar with React, but I always manage to learn more every time I use it - I leveraged multiple Context hooks to organize states even more efficiently, and this went a long way in carefully structuring the Component tree as the app became full of different views. This hackathon was also a return to WebSockets for me, where I was able to write a custom TypeScript Interface to serve as the blueprint for communication payloads.
+
 #### Dillon
 
 #### Marion
@@ -80,6 +82,10 @@ npm i # install dependencies
 ### Issues and Challenges
 
 #### Zen
+
+- Setting up WebSocket connection was slightly tedious
+- Lots of states to keep track of throughout React components; had to be very careful with structure
+- Have never actually written TypeScript for a project and faced lots of typing errors throughout development
 
 #### Dillon
 
