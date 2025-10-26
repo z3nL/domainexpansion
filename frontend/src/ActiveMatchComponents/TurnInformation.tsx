@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ActiveMatchContext from "../ActiveMatchContext";
 
 function TurnInformation() {
-    const { isPlayersTurn } = useContext(ActiveMatchContext);
+  const { isPlayersTurn } = useContext(ActiveMatchContext);
 
   return (
     <div className="turnInformation">

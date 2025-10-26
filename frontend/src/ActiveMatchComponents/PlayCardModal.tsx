@@ -9,11 +9,17 @@ import CardSmall from "./CardSmall";
 import { useContext, useState } from "react";
 import { evaluate_formula } from "../game/cards";
 import { drawCard } from "../game/decks";
+import type { IMatchPayload } from "../matchPayload";
 
 // TODO implement actual onClick for playCardButton
 
 function PlayCardModal() {
-  const { handlePlayCardModal, cardBeingPlayed } = useContext(GameContext);
+  const {
+    handlePlayCardModal,
+    cardBeingPlayed,
+    sendGameMessage,
+    playerNumber,
+  } = useContext(GameContext);
   const {
     beginNextTurn,
     matchDeck,
@@ -49,8 +55,22 @@ function PlayCardModal() {
       return;
     }
 
-    // Update affected score and ** stretch : display for previously played turn
-    targetValue === "Self" ? setPlayerOneScore(result) : setPlayerTwoScore(result);
+    let isGameOver = false;
+
+    const targetPlayer =
+      targetValue === "Self" ? playerNumber : playerNumber === 1 ? 2 : 1;
+
+    let newPlayerOneScore = playerOneScore;
+    let newPlayerTwoScore = playerTwoScore;
+
+    if (targetPlayer === 1) {
+      newPlayerOneScore = result;
+    } else {
+      newPlayerTwoScore = result;
+    }
+
+    setPlayerOneScore(newPlayerOneScore);
+    setPlayerTwoScore(newPlayerTwoScore);
 
     // Remove cardBeingPlayed and selectedConstants from currentHand
     const newHand = currentHand.filter(
@@ -74,9 +94,21 @@ function PlayCardModal() {
     setCurrentHand(newHand);
 
     // Update game state to next turn
-    beginNextTurn();
+    const newTurnNumber = beginNextTurn();
+    if (newTurnNumber === -1) {
+      isGameOver = true;
+    }
 
     // SEND PACKET to server with updated info
+    const payload: IMatchPayload = {
+      type: "playerMove",
+      playerOneScore: newPlayerOneScore,
+      playerTwoScore: newPlayerTwoScore,
+      currentTurn: newTurnNumber, // TODO: Implement current turn tracking
+      isGameOver: isGameOver, // TODO: Implement game over condition
+      winner: "player one", // TODO: Implement winner determination
+    };
+    sendGameMessage(payload);
 
     // Close modal
     handlePlayCardModal?.(null);

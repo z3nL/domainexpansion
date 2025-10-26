@@ -4,6 +4,7 @@ import EditDeck from "./EditDeck";
 import ActiveMatch from "./ActiveMatch";
 import Landing from "./Landing";
 import type { ICard } from "./game/cards";
+import type { IMatchPayload } from "./matchPayload";
 import { randomDeck } from "./game/decks";
 import { useWebSocket } from "./game/useWebSocket";
 
@@ -15,6 +16,7 @@ function App() {
 
   const [gameId, setGameId] = useState<string>("");
   const [playerNumber, setPlayerNumber] = useState<number>(0);
+  const [matchStatus, setMatchStatus] = useState<IMatchPayload | null>(null);
 
   const [isPlayingCard, setIsPlayingCard] = useState(false);
   const [cardBeingPlayed, setCardBeingPlayed] = useState<ICard | null>(null);
@@ -30,8 +32,6 @@ function App() {
     url: "ws://localhost:4545/ws/",
     onMessage: (data) => {
       console.log("Received from server: ", data);
-      const playerNum = data.role.split("player")[1];
-      setPlayerNumber(parseInt(playerNum, 10));
 
       // Different Message Handling
       if (data.type === "gameCreated") {
@@ -42,8 +42,11 @@ function App() {
         setCurrentPage("activeMatch");
       } else if (data.type === "opponentMove") {
         console.log("Opponent played:", data);
+      } else if (data.type === "playerMove") {
+        setMatchStatus(data);
       } else if (data.role) {
-        // Handle GameRole assignment from Python server
+        const playerNum = data.role.split("player")[1];
+        setPlayerNumber(parseInt(playerNum, 10));
         console.log("Assigned role:", data.role);
       } else if (data.error) {
         console.log("Server error:", data.error);
@@ -85,6 +88,7 @@ function App() {
           isPlayingCard,
           handlePlayCardModal,
           cardBeingPlayed,
+          matchStatus,
         }}
       >
         {currentPage === "landing" && <Landing />}
