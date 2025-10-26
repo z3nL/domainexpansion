@@ -97,20 +97,23 @@ export const advancedFormulaDeck: ICard[] = [
     symbol: "$f(x) = \\frac{1}{x}$",
     func: (target: number) => {
       validate_type(target, Number, "target");
-      if (target === 0){
-        return 0.001
+      if (target === 0) {
+        return 0.001;
       }
       return 1 / target;
     },
   },
   {
     name: "The Root of Duality",
-    description: "Reveal one's true dual nature.",
+    description: "Reveal one's true dual nature, whether it be good or evil.",
     tier: "High School",
     type: "Formula",
     symbol: "$f(x) = \\sqrt{x}$",
     func: (target: number) => {
       validate_type(target, Number, "target");
+      if (Math.random() < 0.5) {
+        return -1 * Math.sqrt(target);
+      }
       return Math.sqrt(target);
     },
   },
@@ -150,6 +153,20 @@ export const trigFormulaDeck: ICard[] = [
     func: (target: number) => {
       validate_type(target, Number, "target");
       return Math.tan(target);
+    },
+  },
+];
+
+export const geometryFormulaDeck: ICard[] = [
+  {
+    name: "Around the Global in 360 Degrees",
+    description: "Take a trip around the world, and the unit circle.",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(r) = 2 \\pi r$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return 2 * Math.PI * target;
     },
   },
 ];
