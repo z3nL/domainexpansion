@@ -21,7 +21,7 @@ A turn-based card game where your objective is to leverage your mathematical und
 | -------------- | ---------- | --------------------------------------------- | --------------------------------------------------------------- |
 | Zen Lamberus   |            |                                               |                                                                 |
 | Dillon Wilson  |            |                                               |                                                                 |
-| Marion Forrest | Game Logic | [TheAdaptoid](https://github.com/TheAdaptoid) | [Marion Forrest](https://www.linkedin.com/in/themarionforrest/) |
+| Marion Forrest | Game Master, Backend Developer | [TheAdaptoid](https://github.com/TheAdaptoid) | [Marion Forrest](https://www.linkedin.com/in/themarionforrest/) |
 
 ## Implementation
 
@@ -46,23 +46,6 @@ A turn-based card game where your objective is to leverage your mathematical und
 #### Peer-2-Peer game hosting with web sockets
 
 ==why==
-
-### Code Structure
-
-```bash
-frontend/
-├── src/
-│   ├── App.tsx
-│   ├── ActiveMatchComponents/
-│   │   ├── <fill in>
-│   │   ├── ...
-│   ├── game/ # Game Objects and Logic
-│   │   ├── cards.ts
-│   │   ├── concepts.ts
-│   │   ├── ...
-<fill in>
-Readme.md # Main README
-```
 
 ## Deployment and Usage
 
