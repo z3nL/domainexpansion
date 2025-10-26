@@ -1,6 +1,6 @@
 interface IMatchInformation {
-  hostScore: number;
-  guestScore: number;
+  hostScore: number | number[];
+  guestScore: number | number[];
   turnsRemaining: number;
   cardsRemaining: number;
 }

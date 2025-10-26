@@ -7,13 +7,80 @@ import GameContext from "../GameContext";
 import ActiveMatchContext from "../ActiveMatchContext";
 import CardSmall from "./CardSmall";
 import { useContext, useState } from "react";
+import { evaluate_formula } from "../game/cards";
+import { drawCard } from "../game/decks";
 
 // TODO implement actual onClick for playCardButton
 
 function PlayCardModal() {
   const { handlePlayCardModal, cardBeingPlayed } = useContext(GameContext);
-  const { currentHand } = useContext(ActiveMatchContext);
+  const {
+    nextTurn,
+    matchDeck,
+    currentHand,
+    setCurrentHand,
+    selectedConstants,
+    setSelectedConstants,
+    hostScore,
+    setHostScore,
+    guestScore,
+    setGuestScore,
+    maxHandSize,
+  } = useContext(ActiveMatchContext);
   const [targetValue, setTargetValue] = useState("Self");
+
+  const handleConfirmPlay = () => {
+    if (!cardBeingPlayed) {
+      // This should never happen
+      throw new Error("No card being played");
+    }
+
+    // Validate the played hand **we have a function for this**
+    // if validation fails, show error message and do fucking nothing
+    let result;
+    try {
+      result = evaluate_formula(
+        cardBeingPlayed,
+        targetValue === "Self" ? hostScore : guestScore,
+        selectedConstants,
+      );
+    } catch (error) {
+      window.alert("Invalid play: please do math better");
+      return;
+    }
+
+    // Update affected score and ** stretch : display for previously played turn
+    targetValue === "Self" ? setHostScore(result) : setGuestScore(result);
+
+    // Remove cardBeingPlayed and selectedConstants from currentHand
+    const newHand = currentHand.filter(
+      (card) =>
+        card.name !== cardBeingPlayed.name &&
+        !selectedConstants.some((selCard) => selCard.name === card.name),
+    );
+    setCurrentHand(newHand);
+    setSelectedConstants([]);
+
+    // Draw new cards to refill hand up to maxHandSize
+    for (let i = newHand.length; i < maxHandSize; i++) {
+      newHand.push(drawCard(matchDeck));
+
+      // Out of cards end match condition check
+      if (matchDeck.length === 0) {
+        window.alert("ngl you done bro");
+        break;
+      }
+    }
+    setCurrentHand(newHand);
+
+    // Update game state to next turn
+    nextTurn();
+
+    // SEND PACKET to server with updated info
+
+    // Close modal
+    handlePlayCardModal?.(null);
+  };
 
   return (
     <div className="playCardModal" onClick={() => handlePlayCardModal?.(null)}>
@@ -65,10 +132,7 @@ function PlayCardModal() {
               <CardSmall key={card.name} card={card} />
             ))}
         </div>
-        <button
-          className="playCardButton"
-          onClick={() => handlePlayCardModal?.(null)}
-        >
+        <button className="playCardButton" onClick={handleConfirmPlay}>
           Let's Go!
         </button>
       </div>

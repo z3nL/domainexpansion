@@ -12,9 +12,9 @@ interface GameContextType {
   setGameId?: (id: string) => void;
   isConnected?: boolean;
   sendGameMessage?: (data: any) => void;
-  isPlayingCard?: boolean;
-  handlePlayCardModal?: (card: ICard | null) => void;
-  cardBeingPlayed?: ICard | null;
+  isPlayingCard: boolean;
+  handlePlayCardModal: (card: ICard | null) => void;
+  cardBeingPlayed: ICard | null;
 }
 
 const GameContext = createContext<GameContextType>({
@@ -22,6 +22,9 @@ const GameContext = createContext<GameContextType>({
   setDeck: () => {},
   currentPage: "landing",
   setCurrentPage: () => {},
+  isPlayingCard: false,
+  handlePlayCardModal: () => {},
+  cardBeingPlayed: null,
 });
 
 export default GameContext;

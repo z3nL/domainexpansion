@@ -20,14 +20,23 @@ function ActiveMatch() {
 
   const maxHandSize: number = 6;
   const maxTurns: number = 10; // TODO: Change to 20 later
+  const nextTurn = () => {
+    if (currentTurn < maxTurns) {
+      setCurrentTurn(currentTurn + 1);
+    } else {
+      // End match
+      window.alert("Match over LOL");
+      setInMatch(false);
+    }
+  };
 
   const [beginningOfMatch, setBeginningOfMatch] = useState(true);
   const [currentTurn, setCurrentTurn] = useState(1); // Host is odd turn, guest is even
   const [matchDeck, setMatchDeck] = useState<ICard[]>([]);
   const [currentHand, setCurrentHand] = useState<ICard[]>([]);
   const [selectedConstants, setSelectedConstants] = useState<ICard[]>([]);
-  const [hostScore, setHostScore] = useState(1);
-  const [guestScore, setGuestScore] = useState(1);
+  const [hostScore, setHostScore] = useState<number | number[]>(1);
+  const [guestScore, setGuestScore] = useState<number | number[]>(1);
 
   const [inMatch, setInMatch] = useState(true);
   const [isConfirmingExit, setIsConfirmingExit] = useState(false);
@@ -69,6 +78,11 @@ function ActiveMatch() {
         maxHandSize,
         selectedConstants,
         setSelectedConstants,
+        hostScore,
+        setHostScore,
+        guestScore,
+        setGuestScore,
+        nextTurn,
       }}
     >
       <div className="absoluteHeader">

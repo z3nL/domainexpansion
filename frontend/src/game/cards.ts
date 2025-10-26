@@ -60,7 +60,7 @@ function evaluate_formula(
   formula: ICard,
   target: number | number[],
   args?: ICard[],
-): number {
+): number | number[] {
   if (formula.type !== "Formula" || !formula.func) {
     throw new Error("Card is not a formula");
   }
