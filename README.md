@@ -88,7 +88,9 @@ Throughout the hackathon, I became accustomed to React native as we developed a 
 - Have never actually written TypeScript for a project and faced lots of typing errors throughout development
 
 #### Dillon
-
+- Web Socket Learning Curve
+- Accidentally prop drilling
+- First time React User
 #### Marion
 
 - Very in-experienced with TypeScript and Node
