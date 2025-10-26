@@ -1,4 +1,5 @@
 [class^="card_"] {
+  border: 3px solid rgb(231, 226, 177);
   width: 20rem;
   background: hsla(230, 43%, 53%, 1);
 

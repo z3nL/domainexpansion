@@ -1,25 +1,28 @@
 import "./Landing.css";
 import "./ActiveMatch.css";
 import exitIcon from "./assets/exit.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MatchInformationHeader from "./ActiveMatchComponents/MatchInformationHeader";
 import TurnInformation from "./ActiveMatchComponents/TurnInformation";
 import CurrentHandToPlay from "./ActiveMatchComponents/CurrentHandToPlay";
-import Landing from "./Landing";
 import PlayCardModal from "./ActiveMatchComponents/PlayCardModal";
 import GameContext from "./GameContext";
 import { useContext } from "react";
 import type { ICard } from "./game/cards";
+import handleExit from "./handleExit";
+import initializeMatch from "./initializeMatch";
 
 // TODO implement state management for active match data and navigation back to landing page
 
 function ActiveMatch() {
-  const { deck } = useContext(GameContext);
+  const { deck, setCurrentPage } = useContext(GameContext);
 
   const maxHandSize: number = 6;
   const maxTurns: number = 10; // TODO: Change to 20 later
 
+  const [beginningOfMatch, setBeginningOfMatch] = useState(true);
   const [currentTurn, setCurrentTurn] = useState(1); // Host is odd turn, guest is even
+  const [matchDeck, setMatchDeck] = useState<ICard[]>([]);
   const [currentHand, setCurrentHand] = useState<ICard[]>([]);
   const [hostScore, setHostScore] = useState(1);
   const [guestScore, setGuestScore] = useState(1);
@@ -31,33 +34,33 @@ function ActiveMatch() {
   >(null);
   const [isPlayingCard, setIsPlayingCard] = useState(false);
 
-  const handleExit = () => {
-    if (!isConfirmingExit) {
-      window.alert(
-        "Are you sure you want to exit the match? Click exit again within 5 seconds to confirm.",
-      );
-      setIsConfirmingExit(true);
-      setIsConfirmingExit_time(Date.now());
-    } else if (
-      isConfirmingExit_time &&
-      Date.now() - isConfirmingExit_time < 5000
-    ) {
-      setInMatch(false);
-      setIsConfirmingExit(false);
-    } else {
-      window.alert("Exit confirmation timed out, please confirm again.");
-      setIsConfirmingExit(false);
-    }
+  const handleExitWrapper = () => {
+    handleExit({
+      isConfirmingExit,
+      setIsConfirmingExit,
+      isConfirmingExit_time,
+      setIsConfirmingExit_time,
+      setInMatch,
+    });
   };
 
   const handlePlayCardModal = () => {
     setIsPlayingCard(!isPlayingCard);
   };
 
+  useEffect(() => {
+    if (beginningOfMatch) {
+      initializeMatch(deck, setMatchDeck, setCurrentHand, maxHandSize);
+      setBeginningOfMatch(false);
+    }
+  }, [deck, maxHandSize, beginningOfMatch]);
+
   // When the match is over, return to the landing page
-  if (!inMatch) {
-    return <Landing />;
-  }
+  useEffect(() => {
+    if (!inMatch) {
+      setCurrentPage("landing");
+    }
+  }, [inMatch, setCurrentPage]);
 
   return (
     <>
@@ -66,7 +69,7 @@ function ActiveMatch() {
           src={exitIcon}
           alt="Exit Icon"
           className="exitIcon"
-          onClick={handleExit}
+          onClick={handleExitWrapper}
         />
         <h1>Active Match</h1>
       </div>
@@ -75,11 +78,11 @@ function ActiveMatch() {
           hostScore: hostScore,
           guestScore: guestScore,
           turnsRemaining: maxTurns - currentTurn,
-          cardsRemaining: deck.length,
+          cardsRemaining: matchDeck.length,
         }}
       />
       <TurnInformation />
-      <CurrentHandToPlay handlePlayCardModal={handlePlayCardModal} />
+      <CurrentHandToPlay currentHand={currentHand} handlePlayCardModal={handlePlayCardModal} />
       {isPlayingCard && (
         <PlayCardModal handlePlayCardModal={handlePlayCardModal} />
       )}

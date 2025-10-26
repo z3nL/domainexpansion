@@ -3,14 +3,36 @@ import { useContext } from "react";
 import GameContext from "./GameContext";
 
 function Landing() {
-  const { setCurrentPage } = useContext(GameContext);
+  const { setCurrentPage, isConnected, sendGameMessage } = useContext(GameContext);
+
+  const handleNewGame = () => {
+    if (!isConnected) {
+      alert("Not connected to server")
+      return;
+    }
+
+    setCurrentPage("waitingForGame");
+
+
+    sendGameMessage?. ({
+      type: "createGame",
+      timestamp: Date.now(),
+    });
+  };
+
   return (
     <>
       <h1>Domain Expansion</h1>
+      
+      <div className="connection-status">
+        {isConnected ? '🟢 Connected to Server' : '🔴 Disconnected from Server'}
+      </div>
+
       <div className="landingOptions">
         <button
           className="landingButton"
-          onClick={() => setCurrentPage("activeMatch")}
+          onClick={handleNewGame}
+          disabled={!isConnected}
         >
           New Game
         </button>
@@ -27,5 +49,6 @@ function Landing() {
     </>
   );
 }
+    
 
 export default Landing;

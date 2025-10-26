@@ -1,8 +1,8 @@
 .cardSmall {
   border: 1px solid white;
   border-radius: 8px;
-  height: 5rem;
-  width: 6rem;
+  height: 7rem;
+  width: 8rem;
   padding: 3rem 1rem 3rem 1rem;
   display: flex;
   flex-flow: column nowrap;
