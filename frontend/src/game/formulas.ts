@@ -132,6 +132,7 @@ export const trigFormulaDeck: ICard[] = [
       return Math.sin(target);
     },
   },
+  
   {
     name: "Cosodial Portal",
     description:
@@ -144,6 +145,7 @@ export const trigFormulaDeck: ICard[] = [
       return Math.cos(target);
     },
   },
+
   {
     name: "Tanodial Portal",
     description: "You should have heeded the warning.",
@@ -155,6 +157,46 @@ export const trigFormulaDeck: ICard[] = [
       return Math.tan(target);
     },
   },
+  {
+    name: "Cosecantodial Portal",
+    description:
+      "Closely resembles the sinodial portal wonder if they are related",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(x) = \\csc(x) = \\frac{1}{\\sin(x)}$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return 1 / Math.sin(target);
+    },
+  },
+  
+  {
+    name: "Cotanodial Portal",
+    description:
+      "Flipping the tides of tandonial portal",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(x) = \\cot(x) = \\frac{1}{\\tan(x)}$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return 1 / Math.tan(target);
+    },
+  },
+  
+  {
+    name: "Secanodial Portal",
+    description:
+      "Does open near a cosodial portal.",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(x) = \\sec(x) = \\frac{1}{\\cos(x)}$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return 1 / Math.cos(target);
+    },
+  },
+
+
   {
     name: "Pythagorean Theorem",
     description: "All roads lead to c",

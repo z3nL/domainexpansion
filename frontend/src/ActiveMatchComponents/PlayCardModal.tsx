@@ -55,7 +55,7 @@ function PlayCardModal() {
     }
 
     let isGameOver = false;
-    let winner = "player one";
+    let winner: "player one" | "player two" | "no one" = "no one";
 
     const targetPlayer =
       targetValue === "Self" ? playerNumber : playerNumber === 1 ? 2 : 1;
@@ -116,7 +116,7 @@ function PlayCardModal() {
         winner = "player two";
       } else {
         console.log("draw by score");
-        winner = "Draw!";
+        winner = "no one";
       }
     }
     else{
@@ -131,7 +131,7 @@ function PlayCardModal() {
       playerTwoScore: newPlayerTwoScore,
       currentTurn: newTurnNumber, // TODO: Implement current turn tracking
       isGameOver: isGameOver, // TODO: Implement game over condition
-      winner: "player one", // TODO: Implement winner determination
+      winner: winner, // TODO: Implement winner determination
     };
     sendGameMessage(payload);
     setMatchStatus(payload);

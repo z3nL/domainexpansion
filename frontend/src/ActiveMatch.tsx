@@ -20,7 +20,7 @@ function ActiveMatch() {
     useContext(GameContext);
 
   const maxHandSize: number = 6;
-  const maxTurns: number = 4; // TODO: Change to 20 later
+  const maxTurns: number = 10; // TODO: Change to 20 later
   const beginNextTurn = () => {
     if (currentTurn < maxTurns) {
       return currentTurn + 1;
