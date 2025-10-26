@@ -4,7 +4,7 @@ Build your knowledge and your deck to conquer your opponents and your next math 
 
 ## Overview
 
-A turn-based card game where your objective is to leverage your mathematical understanding to our maneuver your opponent.
+A turn-based card game where your objective is to leverage your mathematical understanding to out maneuver your opponent.
 
 ==expand upon==
 
@@ -17,11 +17,11 @@ A turn-based card game where your objective is to leverage your mathematical und
 
 ## Developers
 
-| Name           | Role       | GitHub                                        | LinkedIn                                                        |
-| -------------- | ---------- | --------------------------------------------- | --------------------------------------------------------------- |
-| Zen Lamberus   |            |                                               |                                                                 |
-| Dillon Wilson  |            |                                               |                                                                 |
-| Marion Forrest | Game Logic | [TheAdaptoid](https://github.com/TheAdaptoid) | [Marion Forrest](https://www.linkedin.com/in/themarionforrest/) |
+| Name           | Role       			| GitHub                                        | LinkedIn                                                        |
+| -------------- | ---------------------| --------------------------------------------- | --------------------------------------------------------------- |
+| Zen Lamberus   | Design / Structure  	| [z3nL](https://github.com/z3nL)               | [Zen Lambertus](https://www.linkedin.com/in/zenlambertus)       |
+| Dillon Wilson  | Design / Structure   | [KingDill305](https://github.com/KingDill305) |                                                                 |
+| Marion Forrest | Game Logic 			| [TheAdaptoid](https://github.com/TheAdaptoid) | [Marion Forrest](https://www.linkedin.com/in/themarionforrest/) |
 
 ## Implementation
 
