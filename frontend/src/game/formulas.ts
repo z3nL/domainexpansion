@@ -246,7 +246,7 @@ export const physicsFormulaDeck: ICard[] = [
     description: "Give me your energy",
     tier: "High School",
     type: "Formula",
-    symbol: "$KE{m, v} = \\frac{1}{2}mv^2$",
+    symbol: "$KE(m, v) = \\frac{1}{2}mv^2$",
     func: (target: number, v: number) => {
       validate_type(target, Number, "target");
       validate_type(v, Number, "argument");
