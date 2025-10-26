@@ -69,5 +69,6 @@
   width: 15rem;
   color: rgb(39, 116, 139);
   background-color: white;
-  margin-bottom: 1rem;
+  margin: 0 auto;
+  padding-bottom: 1rem;
 }

@@ -15,6 +15,15 @@ function App() {
 
   const [gameId, setGameId] = useState<string>("");
 
+  const [isPlayingCard, setIsPlayingCard] = useState(false);
+  const [cardBeingPlayed, setCardBeingPlayed] = useState<ICard | null>(null);
+  const handlePlayCardModal = (card: ICard | null) => {
+    if (card !== null) {
+      setCardBeingPlayed(card);
+    }
+    setIsPlayingCard(!isPlayingCard);
+  };
+
   // Websocket Connection
   const { isConnected, sendMessage } = useWebSocket ({
     url: 'ws://localhost:4545/ws/',
@@ -60,7 +69,7 @@ function App() {
 
   return (
     <>
-      <GameContext.Provider value={{ setCurrentPage, deck, setDeck, currentPage, gameId, setGameId, isConnected, sendGameMessage: sendMessage }}>
+      <GameContext.Provider value={{ setCurrentPage, deck, setDeck, currentPage, gameId, setGameId, isConnected, sendGameMessage: sendMessage, isPlayingCard, handlePlayCardModal, cardBeingPlayed }}>
         {currentPage === "landing" && <Landing />}
         {currentPage === "waitingForGame" && <WaitingForGame />}
         {currentPage === "activeMatch" && <ActiveMatch />}

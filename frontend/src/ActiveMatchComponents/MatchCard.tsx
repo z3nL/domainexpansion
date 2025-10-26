@@ -5,20 +5,16 @@ import "katex/dist/katex.min.css";
 import type { ICard } from "../game/cards";
 import { powerLookupTable } from "../game/cards";
 import "./Card.css";
-import { useState, useContext } from "react";
 import GameContext from "../GameContext";
+import { useContext } from "react";
 
-function MatchCard({ card, handlePlayCardModal }: {card: ICard, handlePlayCardModal: () => void}) {
-  const [isSelected, setIsSelected] = useState(false);
+function MatchCard({ card }: {card: ICard}) {
 
-  const handleCardClick = () => {
-    // TODO matchcard onclick
-  };
+  const { handlePlayCardModal } = useContext(GameContext);
 
   return (
     <div
-      className={`card_${isSelected ? "Selected" : "Unselected"}`}
-      onClick={handleCardClick}
+      className={`card_nonSelectable`}
     >
       <div className="card-header">
         <h3 className="card-name">{card.name}</h3>
@@ -47,7 +43,7 @@ function MatchCard({ card, handlePlayCardModal }: {card: ICard, handlePlayCardMo
         </div>
       </div>
         { card.type !== "Constant" && (
-          <button className="playCardButton" onClick={handlePlayCardModal}>
+          <button className="playCardButton" onClick={() => handlePlayCardModal?.(card)}>
               Play Card
           </button>
         )}

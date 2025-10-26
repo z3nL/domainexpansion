@@ -10,6 +10,9 @@ interface GameContextType {
   setGameId?: (id: string) => void;
   isConnected?: boolean;
   sendGameMessage?: (data: any) => void;
+  isPlayingCard?: boolean;
+  handlePlayCardModal?: (card: ICard | null) => void;
+  cardBeingPlayed?: ICard | null;
 }
 
 const GameContext = createContext<GameContextType>({

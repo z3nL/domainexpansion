@@ -3,10 +3,8 @@ import type { ICard } from "../game/cards";
 
 
 function CurrentHandToPlay({
-  handlePlayCardModal,
   currentHand
 }: {
-  handlePlayCardModal: () => void;
   currentHand: ICard[];
 }) {
   //TODO state variable for currently selected card
@@ -15,7 +13,7 @@ function CurrentHandToPlay({
       <div className="currentHandToPlay">
         <div className="hand">
             {currentHand.map((card: ICard, index: number) => (
-              <MatchCardWrapper key={index} card={card} handlePlayCardModal={handlePlayCardModal} />
+              <MatchCardWrapper key={index} card={card} />
             ))}
           </div>
         <div className="selectedCardInfo">

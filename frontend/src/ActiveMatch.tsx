@@ -15,7 +15,7 @@ import initializeMatch from "./initializeMatch";
 // TODO implement state management for active match data and navigation back to landing page
 
 function ActiveMatch() {
-  const { deck, setCurrentPage } = useContext(GameContext);
+  const { deck, setCurrentPage, isPlayingCard } = useContext(GameContext);
 
   const maxHandSize: number = 6;
   const maxTurns: number = 10; // TODO: Change to 20 later
@@ -32,7 +32,6 @@ function ActiveMatch() {
   const [isConfirmingExit_time, setIsConfirmingExit_time] = useState<
     number | null
   >(null);
-  const [isPlayingCard, setIsPlayingCard] = useState(false);
 
   const handleExitWrapper = () => {
     handleExit({
@@ -42,10 +41,6 @@ function ActiveMatch() {
       setIsConfirmingExit_time,
       setInMatch,
     });
-  };
-
-  const handlePlayCardModal = () => {
-    setIsPlayingCard(!isPlayingCard);
   };
 
   useEffect(() => {
@@ -82,9 +77,9 @@ function ActiveMatch() {
         }}
       />
       <TurnInformation />
-      <CurrentHandToPlay currentHand={currentHand} handlePlayCardModal={handlePlayCardModal} />
+      <CurrentHandToPlay currentHand={currentHand} />
       {isPlayingCard && (
-        <PlayCardModal handlePlayCardModal={handlePlayCardModal} />
+        <PlayCardModal />
       )}
     </>
   );
