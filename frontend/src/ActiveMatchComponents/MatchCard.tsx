@@ -41,7 +41,7 @@ function MatchCard({ card }: { card: ICard }) {
           </ReactMarkdown>
         </div>
       </div>
-      {card.type !== "Constant" && ( // TODO uncomment this && isPlayersTurn && (
+      {card.type !== "Constant" && isPlayersTurn && (
         <button
           className="playCardButton"
           onClick={() => handlePlayCardModal?.(card)}

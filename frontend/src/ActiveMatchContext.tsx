@@ -13,7 +13,7 @@ interface ActiveMatchContextType {
   setPlayerOneScore: (score: number) => void;
   playerTwoScore: number;
   setPlayerTwoScore: (score: number) => void;
-  beginNextTurn: () => void;
+  beginNextTurn: () => number;
   isPlayersTurn: boolean;
 }
 
@@ -29,7 +29,7 @@ const ActiveMatchContext = createContext<ActiveMatchContextType>({
   setPlayerOneScore: () => {},
   playerTwoScore: 0,
   setPlayerTwoScore: () => {},
-  beginNextTurn: () => {},
+  beginNextTurn: () => 0,
   isPlayersTurn: false,
 });
 

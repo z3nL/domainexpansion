@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import type { IMatchPayload } from "../matchPayload";
 
 interface UseWebSocketProps {
   url: string;
@@ -52,7 +53,7 @@ export function useWebSocket({
     };
   }, [url]);
 
-  const sendMessage = (data: any) => {
+  const sendMessage = (data: IMatchPayload) => {
     if (ws.current && ws.current.readyState === WebSocket.OPEN) {
       ws.current.send(JSON.stringify(data));
     } else {

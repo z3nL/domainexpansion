@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import type { ICard } from "./game/cards";
+import type { IMatchPayload } from "./matchPayload";
 
 interface GameContextType {
   deck: ICard[];
@@ -11,11 +12,12 @@ interface GameContextType {
   gameId?: string;
   setGameId?: (id: string) => void;
   isConnected?: boolean;
-  sendGameMessage?: (data: any) => void;
+  sendGameMessage: (data: any) => void;
   isPlayingCard: boolean;
   handlePlayCardModal: (card: ICard | null) => void;
   cardBeingPlayed: ICard | null;
   playerNumber: number;
+  matchStatus: IMatchPayload | null;
 }
 
 const GameContext = createContext<GameContextType>({
@@ -23,10 +25,12 @@ const GameContext = createContext<GameContextType>({
   setDeck: () => {},
   currentPage: "landing",
   setCurrentPage: () => {},
+  sendGameMessage: () => {},
   isPlayingCard: false,
   handlePlayCardModal: () => {},
   cardBeingPlayed: null,
   playerNumber: 0,
+  matchStatus: null,
 });
 
 export default GameContext;

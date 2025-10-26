@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import GameContext from "../GameContext";
+
 interface IMatchInformation {
   playerOneScore: number;
   playerTwoScore: number;
@@ -6,16 +9,24 @@ interface IMatchInformation {
 }
 
 function MatchInformationHeader(matchInfo: IMatchInformation) {
-  // TODO state variables for player scores, turns left, and cards remaining
+  const { playerNumber } = useContext(GameContext);
   return (
     <div className="matchInfoHeader">
       <div className="matchInfoItem">
         <h3>You</h3>
-        <p>{matchInfo.playerOneScore}</p>
+        <p>
+          {playerNumber === 1
+            ? matchInfo.playerOneScore
+            : matchInfo.playerTwoScore}
+        </p>
       </div>
       <div className="matchInfoItem">
         <h3>Opponent</h3>
-        <p>{matchInfo.playerTwoScore}</p>
+        <p>
+          {playerNumber === 1
+            ? matchInfo.playerTwoScore
+            : matchInfo.playerOneScore}
+        </p>
       </div>
       <div className="matchInfoItem">
         <h3>Turns Left</h3>

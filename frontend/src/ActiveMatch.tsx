@@ -16,17 +16,19 @@ import initializeMatch from "./initializeMatch";
 // TODO implement state management for active match data and navigation back to landing page
 
 function ActiveMatch() {
-  const { deck, setCurrentPage, isPlayingCard, playerNumber } = useContext(GameContext);
+  const { deck, setCurrentPage, isPlayingCard, playerNumber, matchStatus } =
+    useContext(GameContext);
 
   const maxHandSize: number = 6;
   const maxTurns: number = 10; // TODO: Change to 20 later
   const beginNextTurn = () => {
     if (currentTurn < maxTurns) {
       setCurrentTurn(currentTurn + 1);
+      return currentTurn + 1;
     } else {
       // End match
       window.alert("Match over LOL");
-      setInMatch(false);
+      return -1;
     }
   };
 
@@ -71,6 +73,15 @@ function ActiveMatch() {
       setCurrentPage("landing");
     }
   }, [inMatch, setCurrentPage]);
+
+  // Account for websocket pings
+  useEffect(() => {
+    if (matchStatus) {
+      setPlayerOneScore(matchStatus.playerOneScore);
+      setPlayerTwoScore(matchStatus.playerTwoScore);
+      setCurrentTurn(matchStatus.currentTurn);
+    }
+  }, [matchStatus]);
 
   return (
     <ActiveMatchContext.Provider
