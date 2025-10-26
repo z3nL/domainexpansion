@@ -187,12 +187,12 @@ export const geometryFormulaDeck: ICard[] = [
     description: "Dont judge based off number",
     tier: "High School",
     type: "Formula",
-    symbol: "$D = b^2 - 4ac$",
-    func: (target: number, a: number, c: number) => {
+    symbol: "$D(x, y, z) = x^2 - 4(y)(z)$",
+    func: (target: number, y: number, z: number) => {
       validate_type(target, Number, "target");
-      validate_type(a, Number, "argument");
-      validate_type(c, Number, "argument");
-      return target ** 2 - (4 * a * c);
+      validate_type(y, Number, "argument");
+      validate_type(z, Number, "argument");
+      return target ** 2 - (4 * y * z);
     },
   },
 ];
@@ -204,11 +204,11 @@ export const physicsFormulaDeck: ICard[] = [
     description: "Give me your energy",
     tier: "High School",
     type: "Formula",
-    symbol: "$KE = \\tfrac{1}{2}mv^2$",
-    func: (target: number, m: number) => {
+    symbol: "$KE{m, v} = \\frac{1}{2}mv^2$",
+    func: (target: number, v: number) => {
       validate_type(target, Number, "target");
-      validate_type(m, Number, "argument");
-      return 0.5 * target * m ** 2;
+      validate_type(v, Number, "argument");
+      return 0.5 * target * (v ** 2);
     },
   },
    {
@@ -216,7 +216,7 @@ export const physicsFormulaDeck: ICard[] = [
     description: "With an almighty push",
     tier: "High School",
     type: "Formula",
-    symbol: "$$F_c = \\frac{mv^2}{r}$",
+    symbol: "$F_{c}{m, v, r} = \\frac{mv^2}{r}$",
     func: (target: number, v: number,r: number ) => {
       validate_type(target, Number, "target");
       validate_type(v, Number, "argument");
