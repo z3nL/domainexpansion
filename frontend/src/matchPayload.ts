@@ -4,7 +4,7 @@ interface IMatchPayload {
   playerTwoScore: number;
   currentTurn: number;
   isGameOver: boolean;
-  winner: "player one" | "player two";
+  winner: "player one" | "player two" | "no one";
 }
 
 export type { IMatchPayload };
