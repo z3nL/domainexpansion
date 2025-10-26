@@ -37,7 +37,9 @@ Inspired by a fictional card game from an instagram video
 
 #### TypeScript-React Tech Stack
 
-==why==
+- We all knew JavaScript, so it immediately seemed ideal
+- Most of us were familiar with React, so we figured we could count on it to make an easily modularizable frontend
+- A lot of processing data with specific parameters needed to be done, so we agreed to use TypeScript to easily define and reference interfaces
 
 #### Peer-2-Peer game hosting with web sockets
 
@@ -76,8 +78,10 @@ npm run dev
 
 #### Zen
 
-#### Dillon
+I have never tried making a game, but it was lots of fun discussing the game concept and coming together to design it. Learning TypeScript was a bit of a learning curve for me at first, but as I got comfortable it felt easier to work with than JavaScript. I also put serious focus into app appearance for the first time in a while and was able to write intentful CSS. Besides that, I'm already familiar with React, but I always manage to learn more every time I use it - I leveraged multiple Context hooks to organize states even more efficiently, and this went a long way in carefully structuring the Component tree as the app became full of different views. This hackathon was also a return to WebSockets for me, where I was able to write a custom TypeScript Interface to serve as the blueprint for communication payloads.
 
+#### Dillon
+Throughout the hackathon, I became accustomed to React native as we developed a web app. I learned the syntax of TypeScript while enhancing my CSS skills, as I was the one helping design the pages and states of the game. I appreciated learning about implementing web sockets and a server to run our game through a Python server. My teammates taught me how to properly right code without running into to many problems while bug fixes an example being how to avoid prop drilling. In CSS, I became more knowledgeable about display, mostly using flex display, alignment, and flex direction to set up my pages. Then I was taught how to implement multiple states to allow for our design of the card on the active match page. All in all, the hackathon was a great and memorable experience, and I will definitely practice react as we only scratched the surface of potential using the language.
 #### Marion
 
 This was my first time using React and TypeScript for a hackathon project. Working on a frontend focused project was a wholely new experience for me. I got a decent introduction React and better familiarized myself with TypeScript. Additionally, this was my first video game submission to a hackathon. Figuring out how to manage game state and peer-to-peer communication was a very rewarding challenge and experience.
@@ -86,8 +90,14 @@ This was my first time using React and TypeScript for a hackathon project. Worki
 
 #### Zen
 
-#### Dillon
+- Setting up WebSocket connection was slightly tedious
+- Lots of states to keep track of throughout React components; had to be very careful with structure
+- Have never actually written TypeScript for a project and faced lots of typing errors throughout development
 
+#### Dillon
+- Web Socket Learning Curve
+- Accidentally prop drilling
+- First time React User
 #### Marion
 
 - Very in-experienced with TypeScript and Node

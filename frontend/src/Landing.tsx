@@ -1,6 +1,7 @@
 import "./Landing.css";
 import { useContext } from "react";
 import GameContext from "./GameContext";
+import titleImage from "./assets/title.png";
 
 function Landing() {
   const { setCurrentPage, isConnected, sendGameMessage } =
@@ -24,7 +25,7 @@ function Landing() {
 
   return (
     <>
-      <h1>Domain Expansion</h1>
+      <img src={titleImage} alt="Domain Expansion Title" className="title-image" />
 
       <div className="connection-status">
         {isConnected ? "🟢 Connected to Server" : "🔴 Disconnected from Server"}
