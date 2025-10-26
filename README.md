@@ -41,7 +41,9 @@ A turn-based card game where your objective is to leverage your mathematical und
 
 #### TypeScript-React Tech Stack
 
-==why==
+- We all knew JavaScript, so it immediately seemed ideal
+- Most of us were familiar with React, so we figured we could count on it to make an easily modularizable frontend
+- A lot of processing data with specific parameters needed to be done, so we agreed to use TypeScript to easily define and reference interfaces
 
 #### Peer-2-Peer game hosting with web sockets
 
