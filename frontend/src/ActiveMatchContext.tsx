@@ -9,10 +9,10 @@ interface ActiveMatchContextType {
   maxHandSize: number;
   selectedConstants: ICard[];
   setSelectedConstants: (cards: ICard[]) => void;
-  hostScore: number | number[];
-  setHostScore: (score: number | number[]) => void;
-  guestScore: number | number[];
-  setGuestScore: (score: number | number[]) => void;
+  hostScore: number;
+  setHostScore: (score: number) => void;
+  guestScore: number;
+  setGuestScore: (score: number) => void;
   nextTurn: () => void;
 }
 

@@ -1,5 +1,10 @@
 import { namedConstantsDeck, numericConstantDeck } from "./constants";
-import { advancedFormulaDeck, elementaryFormulaDeck } from "./formulas";
+import {
+  advancedFormulaDeck,
+  elementaryFormulaDeck,
+  statsFormulaDeck,
+  trigFormulaDeck,
+} from "./formulas";
 import { conceptDeck } from "./concepts";
 
 import type { ICard } from "./cards";
@@ -8,11 +13,13 @@ const constantsDeck: ICard[] = [...namedConstantsDeck, ...numericConstantDeck];
 const formulasDeck: ICard[] = [
   ...elementaryFormulaDeck,
   ...advancedFormulaDeck,
+  ...statsFormulaDeck,
+  ...trigFormulaDeck,
 ];
 const conceptsDeck: ICard[] = [...conceptDeck];
 
 const MAX_CONSTANT_CARDS: number = 10;
-const MAX_FORMULA_CARDS: number = 5;
+const MAX_FORMULA_CARDS: number = 10;
 const MAX_CONCEPT_CARDS: number = 5;
 
 /**

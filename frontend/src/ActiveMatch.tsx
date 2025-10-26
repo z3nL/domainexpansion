@@ -35,8 +35,8 @@ function ActiveMatch() {
   const [matchDeck, setMatchDeck] = useState<ICard[]>([]);
   const [currentHand, setCurrentHand] = useState<ICard[]>([]);
   const [selectedConstants, setSelectedConstants] = useState<ICard[]>([]);
-  const [hostScore, setHostScore] = useState<number | number[]>(1);
-  const [guestScore, setGuestScore] = useState<number | number[]>(1);
+  const [hostScore, setHostScore] = useState<number>(1);
+  const [guestScore, setGuestScore] = useState<number>(1);
 
   const [inMatch, setInMatch] = useState(true);
   const [isConfirmingExit, setIsConfirmingExit] = useState(false);

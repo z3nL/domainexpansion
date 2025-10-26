@@ -108,12 +108,70 @@ export const advancedFormulaDeck: ICard[] = [
     symbol: "$f(x) = \\sqrt{x}$",
     func: (target: number) => {
       validate_type(target, Number, "target");
-      const root: number = Math.sqrt(target);
-      return [-1 * root, root];
+      return Math.sqrt(target);
     },
   },
 ];
 
-export const trigFormulaDeck: ICard[] = [];
+export const trigFormulaDeck: ICard[] = [
+  {
+    name: "Sinodial Portal",
+    description:
+      "Step into the sinodial realm and ride the waves of change. Do not open near a cosodial portal.",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(x) = \\sin(x)$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return Math.sin(target);
+    },
+  },
+  {
+    name: "Cosodial Portal",
+    description:
+      "Step into the cosodial realm and ride the waves of change. Do not open near a sinodial portal.",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(x) = \\cos(x)$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return Math.cos(target);
+    },
+  },
+  {
+    name: "Tanodial Portal",
+    description: "You should have heeded the warning.",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$f(x) = \\tan(x)$",
+    func: (target: number) => {
+      validate_type(target, Number, "target");
+      return Math.tan(target);
+    },
+  },
+];
 
-export const statsFormulaDeck: ICard[] = [];
+export const statsFormulaDeck: ICard[] = [
+  // {
+  //   name: "Spell of Maximilia",
+  //   description: "Only one number shall stall stronger than the rest.",
+  //   tier: "High School",
+  //   type: "Formula",
+  //   symbol: "$f(u) = \\max(u)$",
+  //   func: (target: number[]) => {
+  //     validate_type(target, Array, "target");
+  //     return Math.max(...target);
+  //   },
+  // },
+  // {
+  //   name: "Spell of Minimilia",
+  //   description: "*\"Sometimes, cowards do survive.\"*",
+  //   tier: "High School",
+  //   type: "Formula",
+  //   symbol: "$f(u) = \\min(u)$",
+  //   func: (target: number[]) => {
+  //     validate_type(target, Array, "target");
+  //     return Math.min(...target);
+  //   }
+  // }
+];
