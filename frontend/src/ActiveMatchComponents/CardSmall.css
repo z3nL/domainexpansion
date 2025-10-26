@@ -1,4 +1,4 @@
-.cardSmall {
+[class^="cardSmall_"] {
   border: 1px solid white;
   border-radius: 8px;
   height: 7rem;
@@ -29,6 +29,16 @@
   );
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5364BA", endColorstr="#2C1C6C", GradientType=1 );
+}
+
+.cardSmall_IsPlayingCard:hover {
+  border: 3px solid rgb(248, 226, 34);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 0 8px rgba(248, 226, 34, 0.6);
+}
+
+.cardSmall_IsPlayingCard_IsSelected {
+  border: 3px solid rgb(248, 226, 34);
 }
 
 .cardSmallItem {

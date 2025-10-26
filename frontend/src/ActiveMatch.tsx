@@ -7,6 +7,7 @@ import TurnInformation from "./ActiveMatchComponents/TurnInformation";
 import CurrentHandToPlay from "./ActiveMatchComponents/CurrentHandToPlay";
 import PlayCardModal from "./ActiveMatchComponents/PlayCardModal";
 import GameContext from "./GameContext";
+import ActiveMatchContext from "./ActiveMatchContext";
 import { useContext } from "react";
 import type { ICard } from "./game/cards";
 import handleExit from "./handleExit";
@@ -24,6 +25,7 @@ function ActiveMatch() {
   const [currentTurn, setCurrentTurn] = useState(1); // Host is odd turn, guest is even
   const [matchDeck, setMatchDeck] = useState<ICard[]>([]);
   const [currentHand, setCurrentHand] = useState<ICard[]>([]);
+  const [selectedConstants, setSelectedConstants] = useState<ICard[]>([]);
   const [hostScore, setHostScore] = useState(1);
   const [guestScore, setGuestScore] = useState(1);
 
@@ -58,7 +60,17 @@ function ActiveMatch() {
   }, [inMatch, setCurrentPage]);
 
   return (
-    <>
+    <ActiveMatchContext.Provider
+      value={{
+        matchDeck,
+        setMatchDeck,
+        currentHand,
+        setCurrentHand,
+        maxHandSize,
+        selectedConstants, 
+        setSelectedConstants,
+      }}
+    >
       <div className="absoluteHeader">
         <img
           src={exitIcon}
@@ -81,7 +93,7 @@ function ActiveMatch() {
       {isPlayingCard && (
         <PlayCardModal />
       )}
-    </>
+    </ActiveMatchContext.Provider>
   );
 }
 

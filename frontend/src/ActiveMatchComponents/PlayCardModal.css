@@ -14,10 +14,11 @@
 
 .playCardModalContent {
   width: 90%;
+  height: 40rem;
   max-width: 800px;
   max-height: 1200px;
   background-color: transparent;
-  background-color: #316685;
+  background-color: #3166853e;
 
   padding: 20px;
   border: 3px solid #3b0747;
@@ -26,7 +27,6 @@
   display: flex;
   flex-flow: column nowrap;
   gap: 50px;
-  overflow-y: scroll;
   animation: slideIn 0.3s ease-out;
 }
 
@@ -48,4 +48,14 @@
     opacity: 1;
     transform: scale(1) translateY(0);
   }
+}
+
+.availableConstants {
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: scroll;
+    width: 50rem;
+    height: 15rem;
+    gap: 20px;
+    justify-content: center;
 }
