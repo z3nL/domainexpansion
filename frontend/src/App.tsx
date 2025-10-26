@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <GameContext.Provider value={{ setCurrentPage, deck, setDeck }}>
+      <GameContext.Provider value={{ setCurrentPage, deck, setDeck, currentPage }}>
         {currentPage === "landing" && <Landing />}
         {currentPage === "activeMatch" && <ActiveMatch />}
         {currentPage === "editDeck" && <EditDeck />}
