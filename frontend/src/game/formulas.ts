@@ -155,6 +155,57 @@ export const trigFormulaDeck: ICard[] = [
       return Math.tan(target);
     },
   },
+  {
+    name: "Pythagorean Theorem",
+    description: "All roads lead to c",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$a^2 + b^2 = c^2$",
+    func: (target: number, a: number) => {
+      validate_type(target, Number, "target");
+      validate_type(a, Number, "argument");
+      return target ** 2 + a ** 2;
+    },
+  },
+  {
+    name: "Discriminant",
+    description: "Dont judge based off number",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$D = b^2 - 4ac$",
+    func: (target: number, a: number, c: number) => {
+      validate_type(target, Number, "target");
+      validate_type(a, Number, "argument");
+      validate_type(c, Number, "argument");
+      return target ** 2 - (4 * a * c);
+    },
+  },
+  {
+    name: "Kinetic Energy",
+    description: "Give me your energy",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$KE = \\tfrac{1}{2}mv^2$",
+    func: (target: number, m: number) => {
+      validate_type(target, Number, "target");
+      validate_type(m, Number, "argument");
+      return 0.5 * target * m ** 2;
+    },
+  },
+   {
+    name: "Centripetal Force",
+    description: "With an almighty push",
+    tier: "High School",
+    type: "Formula",
+    symbol: "$$F_c = \\frac{mv^2}{r}$",
+    func: (target: number, v: number,r: number ) => {
+      validate_type(target, Number, "target");
+      validate_type(v, Number, "argument");
+      validate_type(r, Number, "argument");
+      return (target * v ** 2) / r;
+    },
+  },
+
 ];
 
 export const geometryFormulaDeck: ICard[] = [
