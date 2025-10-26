@@ -1,5 +1,22 @@
 import { createContext } from "react";
+import type { ICard } from "./game/cards";
 
-const GameContext = createContext<any>(null);
+interface GameContextType {
+  deck: ICard[];
+  setDeck: (deck: ICard[]) => void;
+  currentPage: "landing" | "activeMatch" | "editDeck" | "waitingForGame";
+  setCurrentPage: (page: "landing" | "activeMatch" | "editDeck" | "waitingForGame") => void;
+  gameId?: string;
+  setGameId?: (id: string) => void;
+  isConnected?: boolean;
+  sendGameMessage?: (data: any) => void;
+}
+
+const GameContext = createContext<GameContextType>({
+  deck: [],
+  setDeck: () => {},
+  currentPage: "landing",
+  setCurrentPage: () => {},
+});
 
 export default GameContext;
