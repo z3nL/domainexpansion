@@ -1,4 +1,4 @@
-![Domain Expansion Logo](../domainexpansion/frontend/src/assets/title.png)
+![Domain Expansion Logo](./frontend/src/assets/title.png)
 
 Build your knowledge and your deck to conquer your opponents and your next math test.
 
