@@ -23,7 +23,7 @@ const conceptsDeck: ICard[] = [...conceptDeck];
 
 const MAX_CONSTANT_CARDS: number = 10;
 const MAX_FORMULA_CARDS: number = 10;
-const MAX_CONCEPT_CARDS: number = 5;
+const MAX_CONCEPT_CARDS: number = 1;
 
 /**
  * Draws a single card from the given deck.

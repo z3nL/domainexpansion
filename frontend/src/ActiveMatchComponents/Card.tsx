@@ -15,7 +15,7 @@ import {
 } from "../EditDeckCardCounters";
 const MAX_CONSTANT_CARDS = 10;
 const MAX_FORMULA_CARDS = 5;
-const MAX_CONCEPT_CARDS = 5;
+const MAX_CONCEPT_CARDS = 1;
 
 function Card(card: ICard) {
   const { deck, setDeck } = useContext(GameContext);
