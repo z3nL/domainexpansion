@@ -202,7 +202,7 @@ export const trigFormulaDeck: ICard[] = [
     description: "All roads lead to c",
     tier: "High School",
     type: "Formula",
-    symbol: "$a^2 + b^2 = c^2$",
+    symbol: "$f(x, y) = x^2 + y^2$",
     func: (target: number, a: number) => {
       validate_type(target, Number, "target");
       validate_type(a, Number, "argument");
