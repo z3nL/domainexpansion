@@ -6,12 +6,13 @@ Build your knowledge and your deck to conquer your opponents and your next math 
 
 A turn-based card game where your objective is to leverage your mathematical understanding to out maneuver your opponent.
 
-==expand upon==
+Inspired by a fictional card game from an instagram video
+
 
 ### Quick Links
 
 - [Implementation](#implementation)
-- [Deployment and Usage](#deployment-and-usage)
+- [How to Play](#how-to-play)
 - [Reflection](#reflection)
 - [Game Rules](#game-rules)
 
@@ -30,14 +31,9 @@ A turn-based card game where your objective is to leverage your mathematical und
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
+- [FastAPI](https://fastapi.tiangolo.com/)
 
 ### Architecture
-
-==A high level description of the project's architecture==
-
-#### Frontend only
-
-==why==
 
 #### TypeScript-React Tech Stack
 
@@ -45,24 +41,34 @@ A turn-based card game where your objective is to leverage your mathematical und
 
 #### Peer-2-Peer game hosting with web sockets
 
-==why==
+We figured this system would be (relatively) quick and easy to set up and implement. To eleminate the need for extra logic to simulate a "host", we chose to use a server as a middleman relay so that both players could use the same client side logic.
 
-## Deployment and Usage
+Player 1 <===> Server <===> Player 2
 
-### Dependencies
+With a simple TypeScript `interface` to store game state, we were able to successfully implement a peer-to-peer game. 
 
-- [node](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
+## How to Play
 
-### Setup
+1. Start the server
+2. Start player 1's client
+3. Start player 2's client
+4. Enjoy
+
+#### Server
 
 ```bash
-npm i # install dependencies
+cd backend
+uv sync
+uv run server.py
 ```
 
-### How to Play
+#### Client
 
-==how to play/run the game==
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ## Reflection
 
@@ -74,8 +80,7 @@ npm i # install dependencies
 
 #### Marion
 
-- First major project with TypeScript
-- First time doing a game
+This was my first time using React and TypeScript for a hackathon project. Working on a frontend focused project was a wholely new experience for me. I got a decent introduction React and better familiarized myself with TypeScript. Additionally, this was my first video game submission to a hackathon. Figuring out how to manage game state and peer-to-peer communication was a very rewarding challenge and experience.
 
 ### Issues and Challenges
 
@@ -86,7 +91,8 @@ npm i # install dependencies
 #### Marion
 
 - Very in-experienced with TypeScript and Node
-- Small hiccups with TypeScript syntax
+- Had to get very creative with how react states were managed
+- Some compromises had be made when implementing game mechanics in order to balance feature completeness and our obvious time constraints. 
 
 ## Game Rules
 
