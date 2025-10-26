@@ -9,11 +9,12 @@ interface ActiveMatchContextType {
   maxHandSize: number;
   selectedConstants: ICard[];
   setSelectedConstants: (cards: ICard[]) => void;
-  hostScore: number;
-  setHostScore: (score: number) => void;
-  guestScore: number;
-  setGuestScore: (score: number) => void;
-  nextTurn: () => void;
+  playerOneScore: number;
+  setPlayerOneScore: (score: number) => void;
+  playerTwoScore: number;
+  setPlayerTwoScore: (score: number) => void;
+  beginNextTurn: () => void;
+  isPlayersTurn: boolean;
 }
 
 const ActiveMatchContext = createContext<ActiveMatchContextType>({
@@ -24,11 +25,12 @@ const ActiveMatchContext = createContext<ActiveMatchContextType>({
   maxHandSize: 6,
   selectedConstants: [],
   setSelectedConstants: () => {},
-  hostScore: 0,
-  setHostScore: () => {},
-  guestScore: 0,
-  setGuestScore: () => {},
-  nextTurn: () => {},
+  playerOneScore: 0,
+  setPlayerOneScore: () => {},
+  playerTwoScore: 0,
+  setPlayerTwoScore: () => {},
+  beginNextTurn: () => {},
+  isPlayersTurn: false,
 });
 
 export default ActiveMatchContext;

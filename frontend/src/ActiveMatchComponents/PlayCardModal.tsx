@@ -15,16 +15,16 @@ import { drawCard } from "../game/decks";
 function PlayCardModal() {
   const { handlePlayCardModal, cardBeingPlayed } = useContext(GameContext);
   const {
-    nextTurn,
+    beginNextTurn,
     matchDeck,
     currentHand,
     setCurrentHand,
     selectedConstants,
     setSelectedConstants,
-    hostScore,
-    setHostScore,
-    guestScore,
-    setGuestScore,
+    playerOneScore,
+    setPlayerOneScore,
+    playerTwoScore,
+    setPlayerTwoScore,
     maxHandSize,
   } = useContext(ActiveMatchContext);
   const [targetValue, setTargetValue] = useState("Self");
@@ -41,7 +41,7 @@ function PlayCardModal() {
     try {
       result = evaluate_formula(
         cardBeingPlayed,
-        targetValue === "Self" ? hostScore : guestScore,
+        targetValue === "Self" ? playerOneScore : playerTwoScore,
         selectedConstants,
       );
     } catch (error) {
@@ -50,7 +50,7 @@ function PlayCardModal() {
     }
 
     // Update affected score and ** stretch : display for previously played turn
-    targetValue === "Self" ? setHostScore(result) : setGuestScore(result);
+    targetValue === "Self" ? setPlayerOneScore(result) : setPlayerTwoScore(result);
 
     // Remove cardBeingPlayed and selectedConstants from currentHand
     const newHand = currentHand.filter(
@@ -74,7 +74,7 @@ function PlayCardModal() {
     setCurrentHand(newHand);
 
     // Update game state to next turn
-    nextTurn();
+    beginNextTurn();
 
     // SEND PACKET to server with updated info
 

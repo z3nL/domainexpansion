@@ -15,6 +15,7 @@ interface GameContextType {
   isPlayingCard: boolean;
   handlePlayCardModal: (card: ICard | null) => void;
   cardBeingPlayed: ICard | null;
+  playerNumber: number;
 }
 
 const GameContext = createContext<GameContextType>({
@@ -25,6 +26,7 @@ const GameContext = createContext<GameContextType>({
   isPlayingCard: false,
   handlePlayCardModal: () => {},
   cardBeingPlayed: null,
+  playerNumber: 0,
 });
 
 export default GameContext;

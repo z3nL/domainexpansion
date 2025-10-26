@@ -1,6 +1,6 @@
 interface IMatchInformation {
-  hostScore: number;
-  guestScore: number;
+  playerOneScore: number;
+  playerTwoScore: number;
   turnsRemaining: number;
   cardsRemaining: number;
 }
@@ -11,11 +11,11 @@ function MatchInformationHeader(matchInfo: IMatchInformation) {
     <div className="matchInfoHeader">
       <div className="matchInfoItem">
         <h3>You</h3>
-        <p>{matchInfo.hostScore}</p>
+        <p>{matchInfo.playerOneScore}</p>
       </div>
       <div className="matchInfoItem">
         <h3>Opponent</h3>
-        <p>{matchInfo.guestScore}</p>
+        <p>{matchInfo.playerTwoScore}</p>
       </div>
       <div className="matchInfoItem">
         <h3>Turns Left</h3>

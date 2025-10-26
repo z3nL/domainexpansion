@@ -14,6 +14,7 @@ function App() {
   >("landing");
 
   const [gameId, setGameId] = useState<string>("");
+  const [playerNumber, setPlayerNumber] = useState<number>(0);
 
   const [isPlayingCard, setIsPlayingCard] = useState(false);
   const [cardBeingPlayed, setCardBeingPlayed] = useState<ICard | null>(null);
@@ -29,6 +30,8 @@ function App() {
     url: "ws://localhost:4545/ws/",
     onMessage: (data) => {
       console.log("Received from server: ", data);
+      const playerNum = data.role.split("player")[1];
+      setPlayerNumber(parseInt(playerNum, 10));
 
       // Different Message Handling
       if (data.type === "gameCreated") {
@@ -70,6 +73,7 @@ function App() {
     <>
       <GameContext.Provider
         value={{
+          playerNumber,
           setCurrentPage,
           deck,
           setDeck,

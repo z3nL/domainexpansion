@@ -6,10 +6,12 @@ import type { ICard } from "../game/cards";
 import { powerLookupTable } from "../game/cards";
 import "./Card.css";
 import GameContext from "../GameContext";
+import ActiveMatchContext from "../ActiveMatchContext";
 import { useContext } from "react";
 
 function MatchCard({ card }: { card: ICard }) {
   const { handlePlayCardModal } = useContext(GameContext);
+  const { isPlayersTurn } = useContext(ActiveMatchContext);
 
   return (
     <div className={`card_nonSelectable`}>
@@ -39,7 +41,7 @@ function MatchCard({ card }: { card: ICard }) {
           </ReactMarkdown>
         </div>
       </div>
-      {card.type !== "Constant" && (
+      {card.type !== "Constant" && ( // TODO uncomment this && isPlayersTurn && (
         <button
           className="playCardButton"
           onClick={() => handlePlayCardModal?.(card)}

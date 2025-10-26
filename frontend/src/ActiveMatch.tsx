@@ -16,11 +16,11 @@ import initializeMatch from "./initializeMatch";
 // TODO implement state management for active match data and navigation back to landing page
 
 function ActiveMatch() {
-  const { deck, setCurrentPage, isPlayingCard } = useContext(GameContext);
+  const { deck, setCurrentPage, isPlayingCard, playerNumber } = useContext(GameContext);
 
   const maxHandSize: number = 6;
   const maxTurns: number = 10; // TODO: Change to 20 later
-  const nextTurn = () => {
+  const beginNextTurn = () => {
     if (currentTurn < maxTurns) {
       setCurrentTurn(currentTurn + 1);
     } else {
@@ -32,11 +32,15 @@ function ActiveMatch() {
 
   const [beginningOfMatch, setBeginningOfMatch] = useState(true);
   const [currentTurn, setCurrentTurn] = useState(1); // Host is odd turn, guest is even
+  const [isPlayersTurn, setIsPlayersTurn] = useState(false);
+  useEffect(() => {
+    setIsPlayersTurn(currentTurn % 2 === playerNumber % 2);
+  }, [currentTurn, playerNumber]);
   const [matchDeck, setMatchDeck] = useState<ICard[]>([]);
   const [currentHand, setCurrentHand] = useState<ICard[]>([]);
   const [selectedConstants, setSelectedConstants] = useState<ICard[]>([]);
-  const [hostScore, setHostScore] = useState<number>(1);
-  const [guestScore, setGuestScore] = useState<number>(1);
+  const [playerOneScore, setPlayerOneScore] = useState<number>(1);
+  const [playerTwoScore, setPlayerTwoScore] = useState<number>(1);
 
   const [inMatch, setInMatch] = useState(true);
   const [isConfirmingExit, setIsConfirmingExit] = useState(false);
@@ -78,11 +82,12 @@ function ActiveMatch() {
         maxHandSize,
         selectedConstants,
         setSelectedConstants,
-        hostScore,
-        setHostScore,
-        guestScore,
-        setGuestScore,
-        nextTurn,
+        playerOneScore,
+        setPlayerOneScore,
+        playerTwoScore,
+        setPlayerTwoScore,
+        beginNextTurn,
+        isPlayersTurn,
       }}
     >
       <div className="absoluteHeader">
@@ -96,8 +101,8 @@ function ActiveMatch() {
       </div>
       <MatchInformationHeader
         {...{
-          hostScore: hostScore,
-          guestScore: guestScore,
+          playerOneScore: playerOneScore,
+          playerTwoScore: playerTwoScore,
           turnsRemaining: maxTurns - currentTurn,
           cardsRemaining: matchDeck.length,
         }}
