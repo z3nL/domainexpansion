@@ -59,6 +59,14 @@ export const namedConstantsDeck: ICard[] = [
 
 export const numericConstantDeck: ICard[] = [
   {
+    name: "King of the Shadow Realm",
+    description: "Ruling over a realm more abstract than the void, **-1** is the king of negative energy.",
+    tier: "High School",
+    type: "Constant",
+    symbol: "$-1$",
+    value: -1,
+  },
+  {
     name: "The Void",
     description:
       "Before all things, there was **0** — the eternal emptiness, the calm before creation.",
