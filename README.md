@@ -17,11 +17,11 @@ A turn-based card game where your objective is to leverage your mathematical und
 
 ## Developers
 
-| Name           | Role       			| GitHub                                        | LinkedIn                                                        |
-| -------------- | ---------------------| --------------------------------------------- | --------------------------------------------------------------- |
-| Zen Lamberus   | Design / Structure  	| [z3nL](https://github.com/z3nL)               | [Zen Lambertus](https://www.linkedin.com/in/zenlambertus)       |
-| Dillon Wilson  | Design / Structure   | [KingDill305](https://github.com/KingDill305) | [Dillon Wilson](https://www.linkedin.com/in/dillon-wilson-1bb85720a)    |
-| Marion Forrest | Game Logic / Backend | [TheAdaptoid](https://github.com/TheAdaptoid) | [Marion Forrest](https://www.linkedin.com/in/themarionforrest/) |
+| Name           | Role       			| GitHub                                        | LinkedIn                                                        			|
+| -------------- | ---------------------| --------------------------------------------- | --------------------------------------------------------------------------|
+| Zen Lamberus   | Design / Scaffolding | [z3nL](https://github.com/z3nL)               | [Zen Lambertus](https://www.linkedin.com/in/zenlambertus)       			|
+| Dillon Wilson  | Design / Structure   | [KingDill305](https://github.com/KingDill305) | [Dillon Wilson](https://www.linkedin.com/in/dillon-wilson-1bb85720a)    	|
+| Marion Forrest | Game Logic / Backend | [TheAdaptoid](https://github.com/TheAdaptoid) | [Marion Forrest](https://www.linkedin.com/in/themarionforrest/) 			|
 
 ## Implementation
 
